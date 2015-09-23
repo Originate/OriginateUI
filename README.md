@@ -108,7 +108,7 @@ textField.textEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
 ```
 
 ### Validating Text Fields
-When implementing registration forms, login masks or other types of forms that would benefit from validation, use `OriginateVlidatedTextField`.
+When implementing registration forms, login masks or other types of forms that would benefit from validation, use `OriginateValidatedTextField`.
 
 ```objective-c
 OriginateValidatedTextField * textField = [[OriginateValidatedTextField alloc] init];
