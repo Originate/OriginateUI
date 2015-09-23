@@ -10,13 +10,9 @@
 
 NSString * const OUIColorPrimaryKey = @"primary";
 NSString * const OUIColorSecondaryKey = @"secondary";
-NSString * const OUIColorSecondaryComplementKey = @"secondaryComplement";
-NSString * const OUIColorPrimaryAccentKey = @"primaryAccent";
-NSString * const OUIColorPrimaryAccentComplementKey = @"primaryAccentComplement";
-NSString * const OUIColorSecondaryAccentKey = @"secondaryAccent";
 NSString * const OUIColorSuccessKey = @"success";
-NSString * const OUIColorFailureKey = @"failure";
-
+NSString * const OUIColorWarningKey = @"warning";
+NSString * const OUIColorErrorKey = @"error";
 
 @interface OriginateThemeColors ()
 
@@ -45,7 +41,7 @@ NSString * const OUIColorFailureKey = @"failure";
     if (!_primaryColor) {
         _primaryColor = [[self class] colorForKey:OUIColorPrimaryKey
                                            source:self.definition
-                                         fallback:[UIColor lightGrayColor]];
+                                         fallback:[UIColor hex:0x00A0D8]];
     }
     
     return _primaryColor;
@@ -56,54 +52,10 @@ NSString * const OUIColorFailureKey = @"failure";
     if (!_secondaryColor) {
         _secondaryColor = [[self class] colorForKey:OUIColorSecondaryKey
                                              source:self.definition
-                                           fallback:[UIColor darkGrayColor]];
+                                           fallback:[UIColor hex:0xFCD92B]];
     }
     
     return _secondaryColor;
-}
-
-- (UIColor *)secondaryComplementColor
-{
-    if (!_secondaryComplementColor) {
-        _secondaryComplementColor = [[self class] colorForKey:OUIColorSecondaryComplementKey
-                                                       source:self.definition
-                                                     fallback:[UIColor lightGrayColor]];
-    }
-    
-    return _secondaryComplementColor;
-}
-
-- (UIColor *)primaryAccentColor
-{
-    if (!_primaryAccentColor) {
-        _primaryAccentColor = [[self class] colorForKey:OUIColorPrimaryAccentKey
-                                                 source:self.definition
-                                               fallback:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]];
-    }
-    
-    return _primaryAccentColor;
-}
-
-- (UIColor *)primaryAccentComplementColor
-{
-    if (!_primaryAccentComplementColor) {
-        _primaryAccentComplementColor = [[self class] colorForKey:OUIColorPrimaryAccentComplementKey
-                                                           source:self.definition
-                                                         fallback:[UIColor whiteColor]];
-    }
-    
-    return _primaryAccentComplementColor;
-}
-
-- (UIColor *)secondaryAccentColor
-{
-    if (!_secondaryAccentColor) {
-        _secondaryAccentColor = [[self class] colorForKey:OUIColorSecondaryAccentKey
-                                                   source:self.definition
-                                                 fallback:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]];
-    }
-    
-    return _secondaryAccentColor;
 }
 
 - (UIColor *)successColor
@@ -111,21 +63,32 @@ NSString * const OUIColorFailureKey = @"failure";
     if (!_successColor) {
         _successColor = [[self class] colorForKey:OUIColorSuccessKey
                                            source:self.definition
-                                         fallback:[UIColor greenColor]];
+                                         fallback:[UIColor hex:0x95BE22]];
     }
     
     return _successColor;
 }
 
-- (UIColor *)failureColor
+- (UIColor *)warningColor
 {
-    if (!_failureColor) {
-        _failureColor = [[self class] colorForKey:OUIColorFailureKey
-                                           source:self.definition
-                                         fallback:[UIColor redColor]];
+    if (!_warningColor) {
+        _warningColor = [[self class] colorForKey:OUIColorWarningKey
+                                                 source:self.definition
+                                               fallback:[UIColor hex:0xFFA500]];
     }
     
-    return _failureColor;
+    return _warningColor;
+}
+
+- (UIColor *)errorColor
+{
+    if (!_errorColor) {
+        _errorColor = [[self class] colorForKey:OUIColorErrorKey
+                                         source:self.definition
+                                       fallback:[UIColor hex:0xFD1111]];
+    }
+    
+    return _errorColor;
 }
 
 + (UIColor *)colorForKey:(NSString *)key

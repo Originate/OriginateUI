@@ -12,9 +12,6 @@ NSString * const OUIFontsDefaultKey = @"default";
 NSString * const OUIFontsDefaultBoldKey = @"defaultBold";
 NSString * const OUIFontsDefaultItalicKey = @"defaultItalic";
 NSString * const OUIFontsDefaultSmallKey = @"defaultSmall";
-NSString * const OUIFontsNavigationBarTitleKey = @"navigationBarTitle";
-NSString * const OUIFontsTableCellTitleKey = @"tableCellTitle";
-NSString * const OUIFontsTableSectionTitleKey = @"tableSectionTitle";
 
 NSString * const OUIFontNameKey = @"name";
 NSString * const OUIFontSizeKey = @"size";
@@ -85,39 +82,6 @@ NSString * const OUIFontSizeKey = @"size";
     return _defaultSmallFont;
 }
 
-- (UIFont *)navigationBarTitleFont
-{
-    if (!_navigationBarTitleFont) {
-        _navigationBarTitleFont = [[self class] fontForKey:OUIFontsNavigationBarTitleKey
-                                                    source:self.definition
-                                                  fallback:[UIFont boldSystemFontOfSize:ceilf([UIFont systemFontSize] * 1.5)]];
-    }
-    
-    return _navigationBarTitleFont;
-}
-
-- (UIFont *)tableCellTitleFont
-{
-    if (!_tableCellTitleFont) {
-        _tableCellTitleFont = [[self class] fontForKey:OUIFontsTableCellTitleKey
-                                                source:self.definition
-                                              fallback:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
-    }
-    
-    return _tableCellTitleFont;
-}
-
-- (UIFont *)tableSectionTitleFont
-{
-    if (!_tableSectionTitleFont) {
-        _tableSectionTitleFont = [[self class] fontForKey:OUIFontsTableSectionTitleKey
-                                                   source:self.definition
-                                                 fallback:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
-    }
-    
-    return _tableSectionTitleFont;
-}
-
 + (UIFont *)fontForKey:(NSString *)key
                 source:(NSDictionary *)definition
               fallback:(UIFont *)fallback
@@ -131,7 +95,8 @@ NSString * const OUIFontSizeKey = @"size";
     
     if (!name && fallback) {
         return fallback;
-    } else if (!name) {
+    }
+    else if (!name) {
         return [UIFont systemFontOfSize:size];
     }
     

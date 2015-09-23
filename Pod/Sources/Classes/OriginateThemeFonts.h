@@ -15,9 +15,6 @@
 @property (nonatomic, strong, readwrite) UIFont *defaultBoldFont;
 @property (nonatomic, strong, readwrite) UIFont *defaultItalicFont;
 @property (nonatomic, strong, readwrite) UIFont *defaultSmallFont;
-@property (nonatomic, strong, readwrite) UIFont *navigationBarTitleFont;
-@property (nonatomic, strong, readwrite) UIFont *tableCellTitleFont;
-@property (nonatomic, strong, readwrite) UIFont *tableSectionTitleFont;
 
 #pragma mark - Methods
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

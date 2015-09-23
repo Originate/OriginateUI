@@ -11,6 +11,9 @@
 @interface UIColor (OriginateHex)
 
 #pragma mark - Methods
++ (instancetype)colorWithHexString:(NSString *)hexString;
++ (NSString *)hexStringWithColor:(UIColor *)color;
+
 + (instancetype)hex:(NSInteger)hexColor;
 + (instancetype)hex:(NSInteger)hexColor alpha:(CGFloat)alpha;
 

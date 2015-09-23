@@ -15,29 +15,14 @@
         "defaultItalic" : {
             "name" : "HelveticaNeue-Thin",
             "size" : 15.0
-        },
-        "navigationBarTitle" : {
-            "name" : "HelveticaNeue-Bold",
-            "size" : 20.0
-        },
-        "tableCellTitle" : {
-            "name" : "HelveticaNeue-Bold",
-            "size" : 15.0
-        },
-        "tableSectionTitle" : {
-            "name" : "HelveticaNeue-Bold",
-            "size" : 15.0
         }
     },
     "colors" : {
-        "primary" : "EFEFEF",
-        "secondary" : "636363",
-        "secondaryComplement" : "AAAAAA",
-        "primaryAccent" : "4A90E2",
-        "primaryAccentComplement" : "ffffff",
-        "secondaryAccent" : "940508",
-        "success" : "8EDA23",
-        "failure" : "bd2c00"
+        "primary" : "00A0D8",
+        "secondary" : "FCD92B",
+        "success" : "95BE22",
+        "warning" : "FFA500",
+        "error" : "bd2c00"
     },
     "components" : {
         "navigationBar" : {

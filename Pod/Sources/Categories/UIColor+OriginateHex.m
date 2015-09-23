@@ -80,11 +80,6 @@
     return [returnString uppercaseString];
 }
 
-- (NSString *)hexString
-{
-    return [[self class] hexStringWithColor:self];
-}
-
 + (UIColor *)hex:(NSInteger)hexColor
 {
     return [[self class] hex:hexColor alpha:1.0];

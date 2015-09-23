@@ -15,12 +15,9 @@
 #pragma mark - Properties
 @property (nonatomic, strong, readwrite) UIColor *primaryColor;
 @property (nonatomic, strong, readwrite) UIColor *secondaryColor;
-@property (nonatomic, strong, readwrite) UIColor *secondaryComplementColor;
-@property (nonatomic, strong, readwrite) UIColor *primaryAccentColor;
-@property (nonatomic, strong, readwrite) UIColor *primaryAccentComplementColor;
-@property (nonatomic, strong, readwrite) UIColor *secondaryAccentColor;
 @property (nonatomic, strong, readwrite) UIColor *successColor;
-@property (nonatomic, strong, readwrite) UIColor *failureColor;
+@property (nonatomic, strong, readwrite) UIColor *warningColor;
+@property (nonatomic, strong, readwrite) UIColor *errorColor;
 
 
 #pragma mark - Methods
