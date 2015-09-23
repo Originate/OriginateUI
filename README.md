@@ -136,7 +136,7 @@ OriginateGradientView *view = [[OriginateGradientView alloc] initWithFirstColor:
 ```
 
 ## Motion Interpolation (Category on UIView)
-Since iOS 7 Apple supports custom motion interpolation for views – i.e. you can make your subviews *respond* to device motion by shifting them slightly, thereby creating a parallax-like effect. That said, the API is tedious to use, which is why we extended `UIView` and introduced a property called `motionInterpolationEnabled`. It applies a default value and enables `x` and `y` axis shifting.
+With iOS 7 Apple introduced motion interpolation for views – i.e. you can make your subviews *respond* to device motion by having the system shift them slightly, thereby creating a parallax-like effect. That said, the API is tedious to use, which is why we extended `UIView` and introduced a property called `motionInterpolationEnabled`. It applies a default value and enables `x` and `y` axis shifting.
 
 ```objective-c
 UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
