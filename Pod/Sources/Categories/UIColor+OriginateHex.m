@@ -44,8 +44,8 @@
     u_int blueValue = 0;
     
     [redScanner scanHexInt:&redValue];
-    [blueScanner scanHexInt:&greenValue];
-    [greenScanner scanHexInt:&blueValue];
+    [greenScanner scanHexInt:&greenValue];
+    [blueScanner scanHexInt:&blueValue];
     
     CGFloat red = (CGFloat)redValue / 254.0;
     CGFloat green = (CGFloat)greenValue / 254.0;
