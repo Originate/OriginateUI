@@ -14,7 +14,7 @@
 @property (nonatomic, strong, readwrite) UIFont *defaultFont;
 @property (nonatomic, strong, readwrite) UIFont *defaultBoldFont;
 @property (nonatomic, strong, readwrite) UIFont *defaultItalicFont;
-@property (nonatomic, strong, readwrite) UIFont *defaultSmallFont;
+@property (nonatomic, strong, readwrite) UIFont *defaultLightFont;
 
 #pragma mark - Methods
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

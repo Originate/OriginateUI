@@ -2,19 +2,19 @@
     "fonts" : {
         "default" : {
             "name" : "HelveticaNeue",
-            "size" : 15.0
+            "size" : 14.0
         },
         "defaultBold" : {
             "name" : "HelveticaNeue-Bold",
-            "size" : 15.0
+            "size" : 14.0
         },
-        "defaultSmall" : {
-            "name" : "HelveticaNeue-Thin",
-            "size" : 11.0
+        "defaultLight" : {
+            "name" : "HelveticaNeue-Light",
+            "size" : 14.0
         },
         "defaultItalic" : {
             "name" : "HelveticaNeue-Thin",
-            "size" : 15.0
+            "size" : 14.0
         }
     },
     "colors" : {

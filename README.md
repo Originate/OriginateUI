@@ -41,9 +41,9 @@ OriginateUI introduces the concept of a `theme`. A theme is specified using `jso
             "name" : "HelveticaNeue-Bold",
             "size" : 15.0
         },
-        "defaultSmall" : {
-            "name" : "HelveticaNeue-Thin",
-            "size" : 11.0
+        "defaultLight" : {
+            "name" : "HelveticaNeue-Light",
+            "size" : 15.0
         },
         ...
     },

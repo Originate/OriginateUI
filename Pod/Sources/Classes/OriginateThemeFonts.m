@@ -11,7 +11,7 @@
 NSString * const OUIFontsDefaultKey = @"default";
 NSString * const OUIFontsDefaultBoldKey = @"defaultBold";
 NSString * const OUIFontsDefaultItalicKey = @"defaultItalic";
-NSString * const OUIFontsDefaultSmallKey = @"defaultSmall";
+NSString * const OUIFontsDefaultLightKey = @"defaultLight";
 
 NSString * const OUIFontNameKey = @"name";
 NSString * const OUIFontSizeKey = @"size";
@@ -71,15 +71,15 @@ NSString * const OUIFontSizeKey = @"size";
     return _defaultItalicFont;
 }
 
-- (UIFont *)defaultSmallFont
+- (UIFont *)defaultLightFont
 {
-    if (!_defaultSmallFont) {
-        _defaultSmallFont = [[self class] fontForKey:OUIFontsDefaultSmallKey
+    if (!_defaultLightFont) {
+        _defaultLightFont = [[self class] fontForKey:OUIFontsDefaultLightKey
                                               source:self.definition
-                                            fallback:[UIFont systemFontOfSize:[UIFont smallSystemFontSize]]];
+                                            fallback:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
     }
     
-    return _defaultSmallFont;
+    return _defaultLightFont;
 }
 
 + (UIFont *)fontForKey:(NSString *)key
