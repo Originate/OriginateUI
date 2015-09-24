@@ -14,9 +14,9 @@
 		F96B542C1BB18B9D004B884D /* MyThemableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B542B1BB18B9D004B884D /* MyThemableViewController.m */; };
 		F96B54311BB18B9D004B884D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96B54301BB18B9D004B884D /* Images.xcassets */; };
 		F96B54341BB18B9D004B884D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96B54321BB18B9D004B884D /* LaunchScreen.xib */; };
-		F97A38EC1BB1C12100E52ED4 /* MyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = F97A38EB1BB1C12100E52ED4 /* MyTheme.m */; settings = {ASSET_TAGS = (); }; };
-		F97A38EE1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */; settings = {ASSET_TAGS = (); }; };
-		F97A38EF1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */; settings = {ASSET_TAGS = (); }; };
+		F97A38EC1BB1C12100E52ED4 /* MyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = F97A38EB1BB1C12100E52ED4 /* MyTheme.m */; };
+		F97A38EE1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */; };
+		F97A38EF1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */; };
 		F9A103971BB18BF600D813FA /* OriginateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A103951BB18BF600D813FA /* OriginateUITests.m */; };
 /* End PBXBuildFile section */
 
@@ -440,6 +440,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -478,6 +479,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
