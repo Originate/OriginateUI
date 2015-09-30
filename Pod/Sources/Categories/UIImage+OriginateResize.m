@@ -57,7 +57,7 @@
 {
     //Determine whether the screen is retina
     if ([[UIScreen mainScreen] scale] == 2.0) {
-        UIGraphicsBeginImageContextWithOptions(newSize, YES, 2.0);
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, 2.0);
     }
     else
     {
