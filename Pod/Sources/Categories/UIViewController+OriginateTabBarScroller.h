@@ -1,5 +1,5 @@
 //
-//  UIViewController+OriginateTabBabScroller.h
+//  UIViewController+OriginateTabBarScroller.h
 //  OriginateUI
 //
 //  Created by William Tachau on 10/1/15.
@@ -9,8 +9,6 @@
 @import UIKit;
 
 @interface UIViewController (OriginateTabBabScroller)
-
-@property (nonatomic, readwrite) CGFloat previousScrollViewOffset;
 
 - (void)slideTabBar:(UITabBar *)tabBar inResponseToScrollInScrollView:(UIScrollView *)scrollView;
 

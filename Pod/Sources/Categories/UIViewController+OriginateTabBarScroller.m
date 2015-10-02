@@ -1,26 +1,24 @@
 //
-//  UIViewController+OriginateTabBabScroller.m
+//  UIViewController+OriginateTabBarScroller.m
 //  OriginateUI
 //
 //  Created by William Tachau on 10/1/15.
 //  Copyright © 2015 Originate. All rights reserved.
 //
 
-#import "UIViewController+OriginateTabBabScroller.h"
+#import "UIViewController+OriginateTabBarScroller.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (OriginateTabBabScroller)
+@implementation UIViewController (OriginateTabBarScroller)
 
-@dynamic previousScrollViewOffset;
-
-- (void)setPreviousScrollViewOffset:(CGFloat)previousScrollViewOffset
+- (void)setOri_PreviousScrollViewOffset:(CGFloat)previousScrollViewOffset
 {
-    objc_setAssociatedObject(self, @selector(previousScrollViewOffset), @(previousScrollViewOffset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(ori_previousScrollViewOffset), @(previousScrollViewOffset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)previousScrollViewOffset
+- (CGFloat)ori_previousScrollViewOffset
 {
-    return [objc_getAssociatedObject(self, @selector(previousScrollViewOffset)) floatValue];
+    return [objc_getAssociatedObject(self, @selector(ori_previousScrollViewOffset)) floatValue];
 }
 
 - (void)slideTabBar:(UITabBar *)tabBar inResponseToScrollInScrollView:(UIScrollView *)scrollView
@@ -34,8 +32,8 @@
 
     // Determine the difference up or down that has been scrolled
     CGFloat scrollOffset = scrollView.contentOffset.y;
-    CGFloat deltaScrollOffset = (scrollOffset - self.previousScrollViewOffset);
-    self.previousScrollViewOffset = scrollOffset;
+    CGFloat deltaScrollOffset = (scrollOffset - self.ori_previousScrollViewOffset);
+    [self setOri_PreviousScrollViewOffset:scrollOffset];
 
     // Calculate what the offset would be, assuming the tab bar wouldn't go off screen
     CGFloat potentialTabBarOffset = (tabBarFrame.origin.y - originalTabBarOrigin) + deltaScrollOffset;
