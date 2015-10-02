@@ -1,6 +1,6 @@
 //
 //  UIViewController+OriginateTabBabScroller.m
-//  Factiva
+//  OriginateUI
 //
 //  Created by William Tachau on 10/1/15.
 //  Copyright © 2015 Originate. All rights reserved.
@@ -9,7 +9,7 @@
 #import "UIViewController+OriginateTabBabScroller.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (FACTabBarSlider)
+@implementation UIViewController (OriginateTabBabScroller)
 
 @dynamic previousScrollViewOffset;
 

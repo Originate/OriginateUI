@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface UIViewController (FACTabBarSlider)
+@interface UIViewController (OriginateTabBabScroller)
 
 @property (nonatomic, readwrite) CGFloat previousScrollViewOffset;
 
