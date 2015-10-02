@@ -24,8 +24,8 @@
 - (void)slideTabBar:(UITabBar *)tabBar inResponseToScrollInScrollView:(UIScrollView *)scrollView
 {
     // Calculate the default origin for the tab bar
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenHeight = screenRect.size.height;
+    CGRect viewportRect = [[[[UIApplication sharedApplication] delegate] window] bounds];
+    CGFloat screenHeight = viewportRect.size.height;
     CGFloat originalTabBarOrigin = screenHeight - tabBar.frame.size.height;
     
     CGRect tabBarFrame = tabBar.frame;
