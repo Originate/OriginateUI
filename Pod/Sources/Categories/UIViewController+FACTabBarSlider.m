@@ -34,13 +34,17 @@
         
         CGRect tabBarFrame = self.tabBarController.tabBar.frame;
         CGFloat scrollOffset = scrollView.contentOffset.y;
+
         // Determine the difference up or down that has been scrolled
         CGFloat deltaScrollOffset = (scrollOffset - self.previousScrollViewOffset);
-        CGFloat maxTabBarOffset = tabBarFrame.size.height;
+
+        // Calculate what the offset would be, assuming the tab bar wouldn't go off screen
         CGFloat potentialTabBarOffset = (tabBarFrame.origin.y - originalTabBarOrigin) + deltaScrollOffset;
+        CGFloat maxTabBarOffset = tabBarFrame.size.height;
+        
         // Don't set the origin any lower than the bottom limit of the screen
         CGFloat lowestPossibleOffset = MIN(maxTabBarOffset, potentialTabBarOffset);
-        // But don't set the origin go below the default origin for the tab bar, either
+        // But don't set the origin below the default origin for the tab bar, either
         CGFloat optimalTabBarOffset = MAX(0, lowestPossibleOffset);
         
         // Only change tab bar if the user hasn't scrolled off above or below the scroll view
