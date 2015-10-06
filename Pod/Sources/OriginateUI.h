@@ -20,6 +20,7 @@
 #import "UIView+OriginateMotionInterpolation.h"
 #import "UIColor+OriginateHex.h"
 #import "UIImage+OriginateResize.h"
+#import "UIViewController+OriginateTabBarScroller.h"
 
 #import "OriginateBaseTransitionAnimation.h"
 #import "OriginatePushBackTransitionAnimation.h"
