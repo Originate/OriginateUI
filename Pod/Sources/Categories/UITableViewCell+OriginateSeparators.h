@@ -1,5 +1,5 @@
 //
-//  UITableViewCell+Separators.h
+//  UITableViewCell+OriginateSeparators.h
 //  OriginateUI
 //
 //  Created by Allen Wu on 10/25/15.
@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface UITableViewCell (Separators)
+@interface UITableViewCell (OriginateSeparators)
 
 - (void)setSeparatorsToFullWidth;
 

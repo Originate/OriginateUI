@@ -13,13 +13,14 @@
 #import "OriginateValidatedTextField.h"
 
 #import "UIButton+OriginateColoredBackgroundImage.h"
-#import "UIImage+OriginateEffects.h"
+#import "UIColor+OriginateHex.h"
 #import "UIImage+OriginateCircularImage.h"
 #import "UIImage+OriginateCorners.h"
-#import "UIImage+OriginateTinting.h"
-#import "UIView+OriginateMotionInterpolation.h"
-#import "UIColor+OriginateHex.h"
+#import "UIImage+OriginateEffects.h"
 #import "UIImage+OriginateResize.h"
+#import "UIImage+OriginateTinting.h"
+#import "UITableViewcell+OriginateSeparators.h"
+#import "UIView+OriginateMotionInterpolation.h"
 #import "UIViewController+OriginateTabBarScroller.h"
 
 #import "OriginateBaseTransitionAnimation.h"

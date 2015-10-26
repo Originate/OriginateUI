@@ -1,14 +1,14 @@
 //
-//  UITableViewCell+Separators.m
+//  UITableViewCell+OriginateSeparators.m
 //  OriginateUI
 //
 //  Created by Allen Wu on 10/25/15.
 //  Copyright (c) 2015 Originate. All rights reserved.
 //
 
-#import "UITableViewCell+Separators.h"
+#import "UITableViewCell+OriginateSeparators.h"
 
-@implementation UITableViewCell (Separators)
+@implementation UITableViewCell (OriginateSeparators)
 
 - (void)setSeparatorsToFullWidth
 {
