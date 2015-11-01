@@ -32,13 +32,7 @@
 
 @implementation OriginateLoadingToggleButton
 
-- (CGSize)intrinsicContentSize
-{
-    return CGSizeMake(40, 40);
-}
-
-
-#pragma mark - ARTLoadingToggleButton
+#pragma mark - OriginateLoadingToggleButton
 
 - (instancetype)initWithFrame:(CGRect)frame
                      offImage:(UIImage *)offImage
