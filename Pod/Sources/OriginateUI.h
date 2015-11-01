@@ -8,6 +8,8 @@
 
 #import "OriginateThemeable.h"
 #import "OriginateTheme.h"
+
+#import "OriginateLoadingToggleButton.h"
 #import "OriginateGradientView.h"
 #import "OriginateTextField.h"
 #import "OriginateValidatedTextField.h"
