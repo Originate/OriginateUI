@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95CBDA91BADD48F6A32D9C46 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F50EA1EEB52A916CDDEA245D /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0949850F1CCE5DC90003A2B4 /* MyKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0949850D1CCE5DC90003A2B4 /* MyKeyboardViewController.m */; };
+		094985101CCE5DC90003A2B4 /* MyKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0949850E1CCE5DC90003A2B4 /* MyKeyboardViewController.xib */; };
+		95CBDA91BADD48F6A32D9C46 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */; };
+		F50EA1EEB52A916CDDEA245D /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */; };
 		F96B54261BB18B9D004B884D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54251BB18B9D004B884D /* main.m */; };
 		F96B54291BB18B9D004B884D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54281BB18B9D004B884D /* AppDelegate.m */; };
 		F96B542C1BB18B9D004B884D /* MyThemableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B542B1BB18B9D004B884D /* MyThemableViewController.m */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0949850C1CCE5DC90003A2B4 /* MyKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyKeyboardViewController.h; sourceTree = "<group>"; };
+		0949850D1CCE5DC90003A2B4 /* MyKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyKeyboardViewController.m; sourceTree = "<group>"; };
+		0949850E1CCE5DC90003A2B4 /* MyKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyKeyboardViewController.xib; sourceTree = "<group>"; };
 		0FDE9AFAE30980A84076259B /* Pods-OriginateUI-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8103B50BE03DC6E62E0F8D83 /* Pods-OriginateUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0949850B1CCE5D830003A2B4 /* Keyboard Examples */ = {
+			isa = PBXGroup;
+			children = (
+				0949850C1CCE5DC90003A2B4 /* MyKeyboardViewController.h */,
+				0949850D1CCE5DC90003A2B4 /* MyKeyboardViewController.m */,
+				0949850E1CCE5DC90003A2B4 /* MyKeyboardViewController.xib */,
+			);
+			name = "Keyboard Examples";
+			sourceTree = "<group>";
+		};
 		697A2F1476AD6A02C1017C63 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,7 @@
 		F96B54221BB18B9D004B884D /* OriginateUI */ = {
 			isa = PBXGroup;
 			children = (
+				0949850B1CCE5D830003A2B4 /* Keyboard Examples */,
 				F96B54271BB18B9D004B884D /* AppDelegate.h */,
 				F96B54281BB18B9D004B884D /* AppDelegate.m */,
 				F96B542A1BB18B9D004B884D /* MyThemableViewController.h */,
@@ -260,6 +276,7 @@
 				F97A38EE1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */,
 				F96B54341BB18B9D004B884D /* LaunchScreen.xib in Resources */,
 				F96B54311BB18B9D004B884D /* Images.xcassets in Resources */,
+				094985101CCE5DC90003A2B4 /* MyKeyboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0949850F1CCE5DC90003A2B4 /* MyKeyboardViewController.m in Sources */,
 				F96B542C1BB18B9D004B884D /* MyThemableViewController.m in Sources */,
 				F97A38EC1BB1C12100E52ED4 /* MyTheme.m in Sources */,
 				F96B54291BB18B9D004B884D /* AppDelegate.m in Sources */,

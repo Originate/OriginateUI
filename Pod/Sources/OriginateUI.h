@@ -24,6 +24,7 @@
 #import "UITableViewcell+OriginateSeparators.h"
 #import "UIView+OriginateMotionInterpolation.h"
 #import "UIViewController+OriginateTabBarScroller.h"
+#import "UIViewController+OriginateKeyboardHelpers.h"
 
 #import "OriginateBaseTransitionAnimation.h"
 #import "OriginatePushBackTransitionAnimation.h"
