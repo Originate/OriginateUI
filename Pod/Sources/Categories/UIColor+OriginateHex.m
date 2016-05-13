@@ -12,46 +12,78 @@
 
 + (instancetype)colorWithHexString:(NSString *)hexString
 {
-    if ([hexString length] != 6) {
+    // Determine if the first two characters are "0x" which we can then ignore
+    if ([hexString length] < 2) {
+      return nil;
+    }
+  
+    NSString* firstTwoChars = [hexString substringToIndex:2];
+    NSString* hexDigitsString = hexString;
+    if ([firstTwoChars isEqualToString:@"0x"]) {
+      hexDigitsString = [hexString substringFromIndex:2];
+    }
+  
+    int length = [hexDigitsString length];
+    if (length != 6 && length != 8) {
         return nil;
     }
     
     NSRegularExpression *redEx = [NSRegularExpression regularExpressionWithPattern:@"[^0-9|a-fA-F]"
                                                                            options:0
                                                                              error:NULL];
-    NSUInteger match = [redEx numberOfMatchesInString:hexString
+    NSUInteger match = [redEx numberOfMatchesInString:hexDigitsString
                                               options:NSMatchingReportCompletion
-                                                range:NSMakeRange(0, [hexString length])];
+                                                range:NSMakeRange(0, length)];
     
     if (match != 0) {
         return nil;
     }
-    
-    NSRange redRange = NSMakeRange(0, 2);
-    NSRange greenRange = NSMakeRange(2, 2);
-    NSRange blueRange = NSMakeRange(4, 2);
-    
-    NSString *redString = [hexString substringWithRange:redRange];
-    NSString *greenString = [hexString substringWithRange:greenRange];
-    NSString *blueString = [hexString substringWithRange:blueRange];
-    
+
+    NSRange alphaRange = NSMakeRange(0,0);
+    NSRange redRange;
+    NSRange greenRange;
+    NSRange blueRange;
+
+    if (length == 6) {
+      redRange = NSMakeRange(0, 2);
+      greenRange = NSMakeRange(2, 2);
+      blueRange = NSMakeRange(4, 2);
+    } else {
+      // Length is 8, so ARGB format
+      alphaRange = NSMakeRange(0, 2);
+      redRange = NSMakeRange(2, 2);
+      greenRange = NSMakeRange(4, 2);
+      blueRange = NSMakeRange(6, 2);
+    }
+  
+    NSString *alphaString = alphaRange.length != 0 ? [hexDigitsString substringWithRange:alphaRange] : nil;
+    NSString *redString = [hexDigitsString substringWithRange:redRange];
+    NSString *greenString = [hexDigitsString substringWithRange:greenRange];
+    NSString *blueString = [hexDigitsString substringWithRange:blueRange];
+  
+    NSScanner *alphaScanner = alphaString ? [NSScanner scannerWithString:alphaString] : nil;
     NSScanner *redScanner = [NSScanner scannerWithString:redString];
     NSScanner *greenScanner = [NSScanner scannerWithString:greenString];
     NSScanner *blueScanner = [NSScanner scannerWithString:blueString];
-    
+  
+    u_int alphaValue = 0;
     u_int redValue = 0;
     u_int greenValue = 0;
     u_int blueValue = 0;
-    
+  
+    if (alphaScanner) {
+      [alphaScanner scanHexInt:&alphaValue];
+    }
     [redScanner scanHexInt:&redValue];
     [greenScanner scanHexInt:&greenValue];
     [blueScanner scanHexInt:&blueValue];
-    
+  
+    CGFloat alpha = alphaScanner ? (CGFloat)alphaValue / 254.0 : 1.0;
     CGFloat red = (CGFloat)redValue / 254.0;
     CGFloat green = (CGFloat)greenValue / 254.0;
     CGFloat blue = (CGFloat)blueValue / 254.0;
     
-    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 + (NSString *)hexStringWithColor:(UIColor *)color
