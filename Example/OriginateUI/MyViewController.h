@@ -9,11 +9,6 @@
 @import UIKit;
 @import OriginateUI;
 
-@class MyTheme;
-
-@interface MyThemableViewController : UIViewController
-
-#pragma mark - Methods
-- (instancetype)initWithTheme:(MyTheme *)theme;
+@interface MyViewController : UIViewController
 
 @end

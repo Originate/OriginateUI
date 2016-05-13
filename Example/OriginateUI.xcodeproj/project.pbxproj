@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95CBDA91BADD48F6A32D9C46 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F50EA1EEB52A916CDDEA245D /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		95CBDA91BADD48F6A32D9C46 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */; };
+		F50EA1EEB52A916CDDEA245D /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */; };
 		F96B54261BB18B9D004B884D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54251BB18B9D004B884D /* main.m */; };
 		F96B54291BB18B9D004B884D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54281BB18B9D004B884D /* AppDelegate.m */; };
-		F96B542C1BB18B9D004B884D /* MyThemableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B542B1BB18B9D004B884D /* MyThemableViewController.m */; };
+		F96B542C1BB18B9D004B884D /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B542B1BB18B9D004B884D /* MyViewController.m */; };
 		F96B54311BB18B9D004B884D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96B54301BB18B9D004B884D /* Images.xcassets */; };
 		F96B54341BB18B9D004B884D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96B54321BB18B9D004B884D /* LaunchScreen.xib */; };
-		F97A38EC1BB1C12100E52ED4 /* MyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = F97A38EB1BB1C12100E52ED4 /* MyTheme.m */; };
-		F97A38EE1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */; };
-		F97A38EF1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */; };
 		F9A103971BB18BF600D813FA /* OriginateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A103951BB18BF600D813FA /* OriginateUITests.m */; };
 /* End PBXBuildFile section */
 
@@ -45,14 +42,11 @@
 		F96B54251BB18B9D004B884D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F96B54271BB18B9D004B884D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F96B54281BB18B9D004B884D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F96B542A1BB18B9D004B884D /* MyThemableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyThemableViewController.h; sourceTree = "<group>"; };
-		F96B542B1BB18B9D004B884D /* MyThemableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyThemableViewController.m; sourceTree = "<group>"; };
+		F96B542A1BB18B9D004B884D /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		F96B542B1BB18B9D004B884D /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		F96B54301BB18B9D004B884D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F96B54331BB18B9D004B884D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F96B54391BB18B9D004B884D /* OriginateUI-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OriginateUI-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F97A38EA1BB1C12100E52ED4 /* MyTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTheme.h; sourceTree = "<group>"; };
-		F97A38EB1BB1C12100E52ED4 /* MyTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTheme.m; sourceTree = "<group>"; };
-		F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StyleDefinition.json; sourceTree = "<group>"; };
 		F9A103941BB18BF600D813FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9A103951BB18BF600D813FA /* OriginateUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriginateUITests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,11 +136,8 @@
 			children = (
 				F96B54271BB18B9D004B884D /* AppDelegate.h */,
 				F96B54281BB18B9D004B884D /* AppDelegate.m */,
-				F96B542A1BB18B9D004B884D /* MyThemableViewController.h */,
-				F96B542B1BB18B9D004B884D /* MyThemableViewController.m */,
-				F97A38EA1BB1C12100E52ED4 /* MyTheme.h */,
-				F97A38EB1BB1C12100E52ED4 /* MyTheme.m */,
-				F97A38ED1BB1C1D400E52ED4 /* StyleDefinition.json */,
+				F96B542A1BB18B9D004B884D /* MyViewController.h */,
+				F96B542B1BB18B9D004B884D /* MyViewController.m */,
 				F90ED7D11BB1BF0C008A7295 /* Resources */,
 				F96B54231BB18B9D004B884D /* Supporting Files */,
 			);
@@ -257,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97A38EE1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */,
 				F96B54341BB18B9D004B884D /* LaunchScreen.xib in Resources */,
 				F96B54311BB18B9D004B884D /* Images.xcassets in Resources */,
 			);
@@ -267,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97A38EF1BB1C1D400E52ED4 /* StyleDefinition.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,8 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96B542C1BB18B9D004B884D /* MyThemableViewController.m in Sources */,
-				F97A38EC1BB1C12100E52ED4 /* MyTheme.m in Sources */,
+				F96B542C1BB18B9D004B884D /* MyViewController.m in Sources */,
 				F96B54291BB18B9D004B884D /* AppDelegate.m in Sources */,
 				F96B54261BB18B9D004B884D /* main.m in Sources */,
 			);
