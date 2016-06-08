@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
   s.subspec 'StarRatingView' do |sp|
     sp.source_files = 'StarRatingView/Pod/Sources/**/*'
     sp.dependency 'OriginateAutoLayout', '0.0.4'
+    sp.resource_bundles = { 'StarRatingViewAssets' => ['StarRatingView/Pod/Assets/**/*.png'] }
   end
 end

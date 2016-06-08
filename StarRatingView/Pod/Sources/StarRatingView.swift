@@ -68,8 +68,8 @@ public final class StarRatingView: UIView {
   // MAYBE take out all colour from the rated image to use as unrated iff unrated image is nil
   init(rating: Float,
        maximumRating: UInt = 5,
-       unratedImage: UIImage = UIImage(named: "empty-star-image")!,
-       ratedImage: UIImage = UIImage(named: "star-image")!) {
+       unratedImage: UIImage = UIImage(named: "star-empty")!,
+       ratedImage: UIImage = UIImage(named: "star-filled")!) {
     (self.rating, self.maximumRating, self.unratedImage, self.ratedImage) = (rating, maximumRating, unratedImage, ratedImage)
     super.init(frame: CGRectZero)
     requiresRender = true
