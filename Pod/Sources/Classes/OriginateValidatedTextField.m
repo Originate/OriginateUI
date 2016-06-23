@@ -21,30 +21,47 @@
 - (instancetype)init
 {
     self = [super init];
+    
     if (self) {
-        self.delegate = self;
-        [self addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+        [self commonInit];
     }
+    
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
+    
     if (self) {
-        self.delegate = self;
-        [self addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+        [self commonInit];
     }
+    
     return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+
+
+    if (self) {
+        [self commonInit];
+    }
+    
+    return self;
+}
+
+- (void)commonInit
+{
+    _validationMode = OriginateTextFieldValidationModeLive;
+    
+    self.delegate = self;
+    [self addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
 
 #pragma mark - Properties
-
-- (void)setValidationBlock:(OriginateTextFieldValidationBlock)block
-{
-    _validationBlock = block;
-}
 
 - (void)setDelegate:(id<UITextFieldDelegate>)delegate
 {
