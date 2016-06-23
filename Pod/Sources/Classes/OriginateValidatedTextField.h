@@ -16,10 +16,14 @@ typedef BOOL (^OriginateTextFieldValidationBlock)(NSString* text);
 typedef void (^OriginateTextFieldValidationChangedBlock)(BOOL valid, OriginateValidatedTextField* textField);
 
 typedef NS_ENUM(NSUInteger, OriginateTextFieldValidationMode) {
-    OriginateTextFieldValidationModeLive,
+    OriginateTextFieldValidationModeLive = 0,
     OriginateTextFieldValidationModeOnBlur,
 };
 
+
+/**
+ *  A subclass of UITextField that adds validation capabilities.
+ */
 @interface OriginateValidatedTextField : OriginateTextField
 
 @property (nonatomic, assign) OriginateTextFieldValidationMode validationMode;
@@ -27,8 +31,6 @@ typedef NS_ENUM(NSUInteger, OriginateTextFieldValidationMode) {
 @property (nonatomic, copy, nullable) OriginateTextFieldValidationChangedBlock validationChangedBlock;
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 
-- (void)setValidationBlock:(OriginateTextFieldValidationBlock)block;
-                            
 @end
 
 NS_ASSUME_NONNULL_END
