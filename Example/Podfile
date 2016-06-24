@@ -1,10 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/Originate/CocoaPods.git'
 use_frameworks!
 
-target 'OriginateUI-Example', :exclusive => true do
-  pod "OriginateUI", :path => "../"
+target 'OriginateUI-Example' do
+pod "OriginateUI", :path => "../"
 end
 
-target 'OriginateUI-Tests', :exclusive => true do
-  pod "OriginateUI", :path => "../"  
+target 'OriginateUI-Tests' do
+pod "OriginateUI", :path => "../"
 end

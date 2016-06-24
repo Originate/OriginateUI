@@ -1,5 +1,5 @@
 PODS:
-  - OriginateUI (0.0.10)
+  - OriginateUI (0.0.12)
 
 DEPENDENCIES:
   - OriginateUI (from `../`)
@@ -9,6 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  OriginateUI: b1b30b0ad17e06adcf50e368132128fa5180d50c
+  OriginateUI: a66b4186040e64b73c2ab1dc949a0d158681714f
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: c984b7a19aa4eef13eb59d1c9ac7b5a773dc27c5
+
+COCOAPODS: 1.0.1

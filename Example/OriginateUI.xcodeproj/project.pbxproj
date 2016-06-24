@@ -7,8 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95CBDA91BADD48F6A32D9C46 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */; };
-		F50EA1EEB52A916CDDEA245D /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */; };
+		5D1DDB0A1D1AF3B00007A160 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB091D1AF3B00007A160 /* CodeViewController.m */; };
+		5D1DDB0D1D1B03920007A160 /* ValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB0C1D1B03920007A160 /* ValidationViewController.m */; };
+		5D1DDB101D1B039A0007A160 /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB0F1D1B039A0007A160 /* GradientViewController.m */; };
+		5D1DDB161D1B03D00007A160 /* TintingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB151D1B03D00007A160 /* TintingViewController.m */; };
+		5D1DDB191D1B03DC0007A160 /* HexadecimalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB181D1B03DC0007A160 /* HexadecimalViewController.m */; };
+		5D1DDB1C1D1B03E30007A160 /* InstallationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB1B1D1B03E30007A160 /* InstallationViewController.m */; };
+		5D1DDB1F1D1B03EA0007A160 /* LiscenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB1E1D1B03EA0007A160 /* LiscenseViewController.m */; };
+		5D1DDB281D1B0B2C0007A160 /* MotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB271D1B0B2C0007A160 /* MotionViewController.m */; };
+		5D1DDB2C1D1B4C0C0007A160 /* Originate.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1DDB2B1D1B4C0C0007A160 /* Originate.png */; };
+		5D54E2AA1D19AAE70006D14F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D54E2A91D19AAE70006D14F /* HomeViewController.m */; };
+		5D54E2AD1D19ABCF0006D14F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D54E2AC1D19ABCF0006D14F /* TableViewController.m */; };
+		5D54E2B11D19E2F90006D14F /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D54E2B01D19E2F90006D14F /* TextFieldViewController.m */; };
+		5DCB87441D1C7CFF00189E43 /* Font Bureau - MillerText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87381D1C7CFF00189E43 /* Font Bureau - MillerText-Bold.otf */; };
+		5DCB87451D1C7CFF00189E43 /* Font Bureau - MillerText-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87391D1C7CFF00189E43 /* Font Bureau - MillerText-Italic.otf */; };
+		5DCB87461D1C7CFF00189E43 /* Font Bureau - MillerText-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873A1D1C7CFF00189E43 /* Font Bureau - MillerText-Roman.otf */; };
+		5DCB87471D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873B1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Bold.otf */; };
+		5DCB87481D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873C1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Italic.otf */; };
+		5DCB87491D1C7CFF00189E43 /* Font Bureau - MillerDisplay-ItalicSC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873D1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-ItalicSC.otf */; };
+		5DCB874A1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf */; };
+		5DCB874B1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873F1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-LightItalic.otf */; };
+		5DCB874C1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87401D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Roman.otf */; };
+		5DCB874D1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-RomanSC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87411D1C7CFF00189E43 /* Font Bureau - MillerDisplay-RomanSC.otf */; };
+		5DCB874E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87421D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Semibold.otf */; };
+		5DCB874F1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87431D1C7CFF00189E43 /* Font Bureau - MillerDisplay-SemiboldItalic.otf */; };
+		5DCB87581D1C7D0F00189E43 /* CircularPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87501D1C7D0F00189E43 /* CircularPro-Medium.otf */; };
+		5DCB87591D1C7D0F00189E43 /* CircularPro-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87511D1C7D0F00189E43 /* CircularPro-MediumItalic.otf */; };
+		5DCB875A1D1C7D0F00189E43 /* CircularPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87521D1C7D0F00189E43 /* CircularPro-Book.otf */; };
+		5DCB875B1D1C7D0F00189E43 /* CircularPro-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87531D1C7D0F00189E43 /* CircularPro-BookItalic.otf */; };
+		5DCB875C1D1C7D0F00189E43 /* CircularPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87541D1C7D0F00189E43 /* CircularPro-Bold.otf */; };
+		5DCB875D1D1C7D0F00189E43 /* CircularPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87551D1C7D0F00189E43 /* CircularPro-BoldItalic.otf */; };
+		5DCB875E1D1C7D0F00189E43 /* CircularPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87561D1C7D0F00189E43 /* CircularPro-Black.otf */; };
+		5DCB875F1D1C7D0F00189E43 /* CircularPro-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87571D1C7D0F00189E43 /* CircularPro-BlackItalic.otf */; };
+		B1BF0D471B45F6698A535F60 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1AA4E4876C858955E347E9 /* Pods_OriginateUI_Example.framework */; };
+		C33FA58EE1AC96EB863DE1BC /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E8EBF5B591EC4D19F85D05 /* Pods_OriginateUI_Tests.framework */; };
 		F96B54261BB18B9D004B884D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54251BB18B9D004B884D /* main.m */; };
 		F96B54291BB18B9D004B884D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54281BB18B9D004B884D /* AppDelegate.m */; };
 		F96B542C1BB18B9D004B884D /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B542B1BB18B9D004B884D /* MyViewController.m */; };
@@ -28,12 +60,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FDE9AFAE30980A84076259B /* Pods-OriginateUI-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8103B50BE03DC6E62E0F8D83 /* Pods-OriginateUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8D045F8DFE9D197D9DE1C552 /* Pods-OriginateUI-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6D2D47B42567B764A21A458 /* Pods-OriginateUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example.release.xcconfig"; sourceTree = "<group>"; };
+		19E36A95B8B013A7B813352E /* Pods-OriginateUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		4D1AA4E4876C858955E347E9 /* Pods_OriginateUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5798EC5E70FE04F0BC6C4775 /* Pods-OriginateUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example.release.xcconfig"; sourceTree = "<group>"; };
+		5D1DDB081D1AF3B00007A160 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
+		5D1DDB091D1AF3B00007A160 /* CodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
+		5D1DDB0B1D1B03920007A160 /* ValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidationViewController.h; sourceTree = "<group>"; };
+		5D1DDB0C1D1B03920007A160 /* ValidationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidationViewController.m; sourceTree = "<group>"; };
+		5D1DDB0E1D1B039A0007A160 /* GradientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientViewController.h; sourceTree = "<group>"; };
+		5D1DDB0F1D1B039A0007A160 /* GradientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientViewController.m; sourceTree = "<group>"; };
+		5D1DDB141D1B03D00007A160 /* TintingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TintingViewController.h; sourceTree = "<group>"; };
+		5D1DDB151D1B03D00007A160 /* TintingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TintingViewController.m; sourceTree = "<group>"; };
+		5D1DDB171D1B03DC0007A160 /* HexadecimalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexadecimalViewController.h; sourceTree = "<group>"; };
+		5D1DDB181D1B03DC0007A160 /* HexadecimalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexadecimalViewController.m; sourceTree = "<group>"; };
+		5D1DDB1A1D1B03E30007A160 /* InstallationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallationViewController.h; sourceTree = "<group>"; };
+		5D1DDB1B1D1B03E30007A160 /* InstallationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallationViewController.m; sourceTree = "<group>"; };
+		5D1DDB1D1D1B03EA0007A160 /* LiscenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscenseViewController.h; sourceTree = "<group>"; };
+		5D1DDB1E1D1B03EA0007A160 /* LiscenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscenseViewController.m; sourceTree = "<group>"; };
+		5D1DDB261D1B0B2C0007A160 /* MotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionViewController.h; sourceTree = "<group>"; };
+		5D1DDB271D1B0B2C0007A160 /* MotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionViewController.m; sourceTree = "<group>"; };
+		5D1DDB2B1D1B4C0C0007A160 /* Originate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Originate.png; sourceTree = "<group>"; };
+		5D54E2A81D19AAE70006D14F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5D54E2A91D19AAE70006D14F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5D54E2AB1D19ABCF0006D14F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		5D54E2AC1D19ABCF0006D14F /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		5D54E2AF1D19E2F90006D14F /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
+		5D54E2B01D19E2F90006D14F /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		5DCB87381D1C7CFF00189E43 /* Font Bureau - MillerText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerText-Bold.otf"; sourceTree = "<group>"; };
+		5DCB87391D1C7CFF00189E43 /* Font Bureau - MillerText-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerText-Italic.otf"; sourceTree = "<group>"; };
+		5DCB873A1D1C7CFF00189E43 /* Font Bureau - MillerText-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerText-Roman.otf"; sourceTree = "<group>"; };
+		5DCB873B1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-Bold.otf"; sourceTree = "<group>"; };
+		5DCB873C1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-Italic.otf"; sourceTree = "<group>"; };
+		5DCB873D1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-ItalicSC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-ItalicSC.otf"; sourceTree = "<group>"; };
+		5DCB873E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-Light.otf"; sourceTree = "<group>"; };
+		5DCB873F1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-LightItalic.otf"; sourceTree = "<group>"; };
+		5DCB87401D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-Roman.otf"; sourceTree = "<group>"; };
+		5DCB87411D1C7CFF00189E43 /* Font Bureau - MillerDisplay-RomanSC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-RomanSC.otf"; sourceTree = "<group>"; };
+		5DCB87421D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		5DCB87431D1C7CFF00189E43 /* Font Bureau - MillerDisplay-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		5DCB87501D1C7D0F00189E43 /* CircularPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-Medium.otf"; sourceTree = "<group>"; };
+		5DCB87511D1C7D0F00189E43 /* CircularPro-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-MediumItalic.otf"; sourceTree = "<group>"; };
+		5DCB87521D1C7D0F00189E43 /* CircularPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-Book.otf"; sourceTree = "<group>"; };
+		5DCB87531D1C7D0F00189E43 /* CircularPro-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-BookItalic.otf"; sourceTree = "<group>"; };
+		5DCB87541D1C7D0F00189E43 /* CircularPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-Bold.otf"; sourceTree = "<group>"; };
+		5DCB87551D1C7D0F00189E43 /* CircularPro-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-BoldItalic.otf"; sourceTree = "<group>"; };
+		5DCB87561D1C7D0F00189E43 /* CircularPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-Black.otf"; sourceTree = "<group>"; };
+		5DCB87571D1C7D0F00189E43 /* CircularPro-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-BlackItalic.otf"; sourceTree = "<group>"; };
+		960416D0AB5D03CE7631B10B /* Pods-OriginateUI-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1E8EBF5B591EC4D19F85D05 /* Pods_OriginateUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5A50A1CF90845E995BD8331 /* Pods-OriginateUI-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F90ED7CE1BB1BF01008A7295 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F90ED7CF1BB1BF01008A7295 /* OriginateUI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = OriginateUI.podspec; path = ../OriginateUI.podspec; sourceTree = "<group>"; };
 		F90ED7D01BB1BF01008A7295 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -56,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDA91BADD48F6A32D9C46 /* Pods_OriginateUI_Example.framework in Frameworks */,
+				B1BF0D471B45F6698A535F60 /* Pods_OriginateUI_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,29 +139,170 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F50EA1EEB52A916CDDEA245D /* Pods_OriginateUI_Tests.framework in Frameworks */,
+				C33FA58EE1AC96EB863DE1BC /* Pods_OriginateUI_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		697A2F1476AD6A02C1017C63 /* Pods */ = {
+		3CBC4ABA20656323277B2A0A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8103B50BE03DC6E62E0F8D83 /* Pods-OriginateUI-Example.debug.xcconfig */,
-				F6D2D47B42567B764A21A458 /* Pods-OriginateUI-Example.release.xcconfig */,
-				8D045F8DFE9D197D9DE1C552 /* Pods-OriginateUI-Tests.debug.xcconfig */,
-				0FDE9AFAE30980A84076259B /* Pods-OriginateUI-Tests.release.xcconfig */,
+				19E36A95B8B013A7B813352E /* Pods-OriginateUI-Example.debug.xcconfig */,
+				5798EC5E70FE04F0BC6C4775 /* Pods-OriginateUI-Example.release.xcconfig */,
+				960416D0AB5D03CE7631B10B /* Pods-OriginateUI-Tests.debug.xcconfig */,
+				E5A50A1CF90845E995BD8331 /* Pods-OriginateUI-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F0E337B2B16BC6FB78763F6D /* Frameworks */ = {
+		5D1DDB201D1B03F30007A160 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				D58AEF2D3E78B999ADBEEC5A /* Pods_OriginateUI_Example.framework */,
-				1C7122CBC1B9939C56CBBAFA /* Pods_OriginateUI_Tests.framework */,
+				5D1DDB0B1D1B03920007A160 /* ValidationViewController.h */,
+				5D1DDB0C1D1B03920007A160 /* ValidationViewController.m */,
+			);
+			name = Validation;
+			sourceTree = "<group>";
+		};
+		5D1DDB211D1B03FB0007A160 /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				5D1DDB0E1D1B039A0007A160 /* GradientViewController.h */,
+				5D1DDB0F1D1B039A0007A160 /* GradientViewController.m */,
+			);
+			name = Gradient;
+			sourceTree = "<group>";
+		};
+		5D1DDB221D1B04040007A160 /* Tinting */ = {
+			isa = PBXGroup;
+			children = (
+				5D1DDB141D1B03D00007A160 /* TintingViewController.h */,
+				5D1DDB151D1B03D00007A160 /* TintingViewController.m */,
+			);
+			name = Tinting;
+			sourceTree = "<group>";
+		};
+		5D1DDB231D1B040E0007A160 /* Hexadecimal */ = {
+			isa = PBXGroup;
+			children = (
+				5D1DDB171D1B03DC0007A160 /* HexadecimalViewController.h */,
+				5D1DDB181D1B03DC0007A160 /* HexadecimalViewController.m */,
+			);
+			name = Hexadecimal;
+			sourceTree = "<group>";
+		};
+		5D1DDB241D1B041A0007A160 /* Installation */ = {
+			isa = PBXGroup;
+			children = (
+				5D1DDB1A1D1B03E30007A160 /* InstallationViewController.h */,
+				5D1DDB1B1D1B03E30007A160 /* InstallationViewController.m */,
+			);
+			name = Installation;
+			sourceTree = "<group>";
+		};
+		5D1DDB251D1B04260007A160 /* Liscense */ = {
+			isa = PBXGroup;
+			children = (
+				5D1DDB1D1D1B03EA0007A160 /* LiscenseViewController.h */,
+				5D1DDB1E1D1B03EA0007A160 /* LiscenseViewController.m */,
+			);
+			name = Liscense;
+			sourceTree = "<group>";
+		};
+		5D54E2AE1D19B0570006D14F /* Detail Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D54E2B61D1A010F0006D14F /* Motion */,
+				5D54E2B71D1A01180006D14F /* TextField */,
+				5D1DDB201D1B03F30007A160 /* Validation */,
+				5D1DDB211D1B03FB0007A160 /* Gradient */,
+				5D1DDB221D1B04040007A160 /* Tinting */,
+				5D1DDB231D1B040E0007A160 /* Hexadecimal */,
+				5D1DDB241D1B041A0007A160 /* Installation */,
+				5D1DDB251D1B04260007A160 /* Liscense */,
+			);
+			name = "Detail Views";
+			sourceTree = "<group>";
+		};
+		5D54E2B51D1A00F40006D14F /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				5D54E2AB1D19ABCF0006D14F /* TableViewController.h */,
+				5D54E2AC1D19ABCF0006D14F /* TableViewController.m */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		5D54E2B61D1A010F0006D14F /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				F96B542A1BB18B9D004B884D /* MyViewController.h */,
+				F96B542B1BB18B9D004B884D /* MyViewController.m */,
+				5D1DDB261D1B0B2C0007A160 /* MotionViewController.h */,
+				5D1DDB271D1B0B2C0007A160 /* MotionViewController.m */,
+			);
+			name = Motion;
+			sourceTree = "<group>";
+		};
+		5D54E2B71D1A01180006D14F /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				5D54E2AF1D19E2F90006D14F /* TextFieldViewController.h */,
+				5D54E2B01D19E2F90006D14F /* TextFieldViewController.m */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		5DCB87601D1C7D1A00189E43 /* Originate Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5DCB87611D1C7D2800189E43 /* Circular Family */,
+				5DCB87621D1C7D3400189E43 /* Miller Family */,
+			);
+			name = "Originate Fonts";
+			sourceTree = "<group>";
+		};
+		5DCB87611D1C7D2800189E43 /* Circular Family */ = {
+			isa = PBXGroup;
+			children = (
+				5DCB87501D1C7D0F00189E43 /* CircularPro-Medium.otf */,
+				5DCB87511D1C7D0F00189E43 /* CircularPro-MediumItalic.otf */,
+				5DCB87521D1C7D0F00189E43 /* CircularPro-Book.otf */,
+				5DCB87531D1C7D0F00189E43 /* CircularPro-BookItalic.otf */,
+				5DCB87541D1C7D0F00189E43 /* CircularPro-Bold.otf */,
+				5DCB87551D1C7D0F00189E43 /* CircularPro-BoldItalic.otf */,
+				5DCB87561D1C7D0F00189E43 /* CircularPro-Black.otf */,
+				5DCB87571D1C7D0F00189E43 /* CircularPro-BlackItalic.otf */,
+			);
+			name = "Circular Family";
+			sourceTree = "<group>";
+		};
+		5DCB87621D1C7D3400189E43 /* Miller Family */ = {
+			isa = PBXGroup;
+			children = (
+				5DCB87381D1C7CFF00189E43 /* Font Bureau - MillerText-Bold.otf */,
+				5DCB87391D1C7CFF00189E43 /* Font Bureau - MillerText-Italic.otf */,
+				5DCB873A1D1C7CFF00189E43 /* Font Bureau - MillerText-Roman.otf */,
+				5DCB873B1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Bold.otf */,
+				5DCB873C1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Italic.otf */,
+				5DCB873D1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-ItalicSC.otf */,
+				5DCB873E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf */,
+				5DCB873F1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-LightItalic.otf */,
+				5DCB87401D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Roman.otf */,
+				5DCB87411D1C7CFF00189E43 /* Font Bureau - MillerDisplay-RomanSC.otf */,
+				5DCB87421D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Semibold.otf */,
+				5DCB87431D1C7CFF00189E43 /* Font Bureau - MillerDisplay-SemiboldItalic.otf */,
+			);
+			name = "Miller Family";
+			sourceTree = "<group>";
+		};
+		BE1C4FC26E91BC989DF042BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D1AA4E4876C858955E347E9 /* Pods_OriginateUI_Example.framework */,
+				E1E8EBF5B591EC4D19F85D05 /* Pods_OriginateUI_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +320,8 @@
 		F90ED7D11BB1BF0C008A7295 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5DCB87601D1C7D1A00189E43 /* Originate Fonts */,
+				5D1DDB2B1D1B4C0C0007A160 /* Originate.png */,
 				F96B54301BB18B9D004B884D /* Images.xcassets */,
 				F96B54321BB18B9D004B884D /* LaunchScreen.xib */,
 			);
@@ -117,8 +335,8 @@
 				F96B54221BB18B9D004B884D /* OriginateUI */,
 				F9A103931BB18BF600D813FA /* Tests */,
 				F96B54211BB18B9D004B884D /* Products */,
-				697A2F1476AD6A02C1017C63 /* Pods */,
-				F0E337B2B16BC6FB78763F6D /* Frameworks */,
+				3CBC4ABA20656323277B2A0A /* Pods */,
+				BE1C4FC26E91BC989DF042BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,8 +354,12 @@
 			children = (
 				F96B54271BB18B9D004B884D /* AppDelegate.h */,
 				F96B54281BB18B9D004B884D /* AppDelegate.m */,
-				F96B542A1BB18B9D004B884D /* MyViewController.h */,
-				F96B542B1BB18B9D004B884D /* MyViewController.m */,
+				5D1DDB081D1AF3B00007A160 /* CodeViewController.h */,
+				5D1DDB091D1AF3B00007A160 /* CodeViewController.m */,
+				5D54E2A81D19AAE70006D14F /* HomeViewController.h */,
+				5D54E2A91D19AAE70006D14F /* HomeViewController.m */,
+				5D54E2B51D1A00F40006D14F /* Table */,
+				5D54E2AE1D19B0570006D14F /* Detail Views */,
 				F90ED7D11BB1BF0C008A7295 /* Resources */,
 				F96B54231BB18B9D004B884D /* Supporting Files */,
 			);
@@ -169,12 +391,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F96B54431BB18B9D004B884D /* Build configuration list for PBXNativeTarget "OriginateUI-Example" */;
 			buildPhases = (
-				D71BFCFDB7F94537A5ED5997 /* Check Pods Manifest.lock */,
+				CFC84EA1A0207059A7259153 /* [CP] Check Pods Manifest.lock */,
 				F96B541C1BB18B9D004B884D /* Sources */,
 				F96B541D1BB18B9D004B884D /* Frameworks */,
 				F96B541E1BB18B9D004B884D /* Resources */,
-				ADBDA11686028CE1FCEE5C59 /* Embed Pods Frameworks */,
-				C787574D427A2F3BF100125A /* Copy Pods Resources */,
+				1F288C40613777A6B4EDE417 /* [CP] Embed Pods Frameworks */,
+				A79186AEF090232B024CBA42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,12 +411,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F96B54461BB18B9D004B884D /* Build configuration list for PBXNativeTarget "OriginateUI-Tests" */;
 			buildPhases = (
-				7EA4B4B33066D82C17C03FAF /* Check Pods Manifest.lock */,
+				08A8CA4015CBFAF5813D2F09 /* [CP] Check Pods Manifest.lock */,
 				F96B54351BB18B9D004B884D /* Sources */,
 				F96B54361BB18B9D004B884D /* Frameworks */,
 				F96B54371BB18B9D004B884D /* Resources */,
-				319A04A3A939BC4CF95A0AC6 /* Embed Pods Frameworks */,
-				A91B387E107B8526EF328C98 /* Copy Pods Resources */,
+				B83C37FC9F00433B35F5415E /* [CP] Embed Pods Frameworks */,
+				513115CC5672991B5F3263D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +439,7 @@
 				TargetAttributes = {
 					F96B541F1BB18B9D004B884D = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = DUUFPQLBM7;
 					};
 					F96B54381BB18B9D004B884D = {
 						CreatedOnToolsVersion = 6.4;
@@ -248,8 +471,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCB874A1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf in Resources */,
+				5DCB875D1D1C7D0F00189E43 /* CircularPro-BoldItalic.otf in Resources */,
+				5DCB875A1D1C7D0F00189E43 /* CircularPro-Book.otf in Resources */,
+				5DCB87581D1C7D0F00189E43 /* CircularPro-Medium.otf in Resources */,
+				5DCB874F1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-SemiboldItalic.otf in Resources */,
+				5DCB874D1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-RomanSC.otf in Resources */,
+				5DCB874C1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Roman.otf in Resources */,
+				5DCB87441D1C7CFF00189E43 /* Font Bureau - MillerText-Bold.otf in Resources */,
 				F96B54341BB18B9D004B884D /* LaunchScreen.xib in Resources */,
+				5DCB87451D1C7CFF00189E43 /* Font Bureau - MillerText-Italic.otf in Resources */,
+				5DCB87591D1C7D0F00189E43 /* CircularPro-MediumItalic.otf in Resources */,
+				5DCB87481D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Italic.otf in Resources */,
 				F96B54311BB18B9D004B884D /* Images.xcassets in Resources */,
+				5DCB874E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Semibold.otf in Resources */,
+				5D1DDB2C1D1B4C0C0007A160 /* Originate.png in Resources */,
+				5DCB874B1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-LightItalic.otf in Resources */,
+				5DCB875E1D1C7D0F00189E43 /* CircularPro-Black.otf in Resources */,
+				5DCB87491D1C7CFF00189E43 /* Font Bureau - MillerDisplay-ItalicSC.otf in Resources */,
+				5DCB875B1D1C7D0F00189E43 /* CircularPro-BookItalic.otf in Resources */,
+				5DCB875F1D1C7D0F00189E43 /* CircularPro-BlackItalic.otf in Resources */,
+				5DCB87471D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Bold.otf in Resources */,
+				5DCB87461D1C7CFF00189E43 /* Font Bureau - MillerText-Roman.otf in Resources */,
+				5DCB875C1D1C7D0F00189E43 /* CircularPro-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,29 +507,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		319A04A3A939BC4CF95A0AC6 /* Embed Pods Frameworks */ = {
+		08A8CA4015CBFAF5813D2F09 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7EA4B4B33066D82C17C03FAF /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,29 +522,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A91B387E107B8526EF328C98 /* Copy Pods Resources */ = {
+		1F288C40613777A6B4EDE417 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADBDA11686028CE1FCEE5C59 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,14 +537,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C787574D427A2F3BF100125A /* Copy Pods Resources */ = {
+		513115CC5672991B5F3263D4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A79186AEF090232B024CBA42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,14 +567,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D71BFCFDB7F94537A5ED5997 /* Check Pods Manifest.lock */ = {
+		B83C37FC9F00433B35F5415E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFC84EA1A0207059A7259153 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,9 +604,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1DDB1C1D1B03E30007A160 /* InstallationViewController.m in Sources */,
+				5D1DDB101D1B039A0007A160 /* GradientViewController.m in Sources */,
+				5D54E2B11D19E2F90006D14F /* TextFieldViewController.m in Sources */,
+				5D1DDB191D1B03DC0007A160 /* HexadecimalViewController.m in Sources */,
+				5D1DDB161D1B03D00007A160 /* TintingViewController.m in Sources */,
 				F96B542C1BB18B9D004B884D /* MyViewController.m in Sources */,
 				F96B54291BB18B9D004B884D /* AppDelegate.m in Sources */,
 				F96B54261BB18B9D004B884D /* main.m in Sources */,
+				5D1DDB281D1B0B2C0007A160 /* MotionViewController.m in Sources */,
+				5D54E2AD1D19ABCF0006D14F /* TableViewController.m in Sources */,
+				5D1DDB1F1D1B03EA0007A160 /* LiscenseViewController.m in Sources */,
+				5D54E2AA1D19AAE70006D14F /* HomeViewController.m in Sources */,
+				5D1DDB0A1D1AF3B00007A160 /* CodeViewController.m in Sources */,
+				5D1DDB0D1D1B03920007A160 /* ValidationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,33 +738,41 @@
 		};
 		F96B54441BB18B9D004B884D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8103B50BE03DC6E62E0F8D83 /* Pods-OriginateUI-Example.debug.xcconfig */;
+			baseConfigurationReference = 19E36A95B8B013A7B813352E /* Pods-OriginateUI-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OriginateUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.OriginateUI-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F96B54451BB18B9D004B884D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6D2D47B42567B764A21A458 /* Pods-OriginateUI-Example.release.xcconfig */;
+			baseConfigurationReference = 5798EC5E70FE04F0BC6C4775 /* Pods-OriginateUI-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OriginateUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.OriginateUI-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		F96B54471BB18B9D004B884D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D045F8DFE9D197D9DE1C552 /* Pods-OriginateUI-Tests.debug.xcconfig */;
+			baseConfigurationReference = 960416D0AB5D03CE7631B10B /* Pods-OriginateUI-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -530,7 +793,7 @@
 		};
 		F96B54481BB18B9D004B884D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FDE9AFAE30980A84076259B /* Pods-OriginateUI-Tests.release.xcconfig */;
+			baseConfigurationReference = E5A50A1CF90845E995BD8331 /* Pods-OriginateUI-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
