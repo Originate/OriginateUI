@@ -11,14 +11,14 @@
 
 @interface HexadecimalViewController ()
 
-@property UIView *hexView;
-@property UILabel *label;
-@property UILabel *label1;
-@property UILabel *label2;
+@property (nonatomic, strong) UIView *hexView;
+@property (nonatomic, strong) UILabel *mainLabel;
+@property (nonatomic, strong) UILabel *hexLabel;
+@property (nonatomic, strong) UILabel *opacityLabel;
 @property (nonatomic, strong) OriginateValidatedTextField *hexTextField;
 @property (nonatomic, strong) OriginateValidatedTextField *opacityTextField;
-@property BOOL firstValid;
-@property BOOL secondValid;
+@property (nonatomic, assign) BOOL firstValid;
+@property (nonatomic, assign) BOOL secondValid;
 
 @end
 
@@ -29,64 +29,88 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.title = @"Hexadecimal Colors";
-    int screenHeight = self.view.frame.size.height;
-    int screenWidth = self.view.frame.size.width;
+    CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+    CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     self.firstValid = YES;
     self.secondValid = YES;
-    [self labelCreate];
-    [self textFieldCreate];
-    //Code button setup
+    [self.view addSubview:self.mainLabel];
+    [self.view addSubview:self.hexLabel];
+    [self.view addSubview:self.opacityLabel];
+    [self.view addSubview:self.hexTextField];
+    [self.view addSubview:self.opacityTextField];
+    
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((self.view.frame.size.width-110),(self.view.frame.size.height-48), 110.0f, 40.0f);
     [codeButton setTitle:@"Code" forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
-    //hexButton setup
+
     UIButton *hexButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     hexButton.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.35), 110.0, 40.0);
     [hexButton setTitle:@"Go" forState:UIControlStateNormal];
     hexButton.titleLabel.font = [UIFont systemFontOfSize:22];
     [hexButton addTarget:self action:@selector(hexButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:hexButton];
-    //Hex color view
-    CGRect  viewRect = CGRectMake(screenWidth*0.5-50.0, screenHeight*0.45, 100.0, 100.0);
-    self.hexView = [[UIView alloc] initWithFrame:viewRect];
-    self.hexView.backgroundColor = [UIColor hex:0xFF2D55 alpha:0.9];
-    self.hexView.layer.cornerRadius = 8.0;
-    self.hexView.layer.masksToBounds = YES;
     [self.view addSubview:self.hexView];
 }
 
-- (void) labelCreate
+- (UIView *)hexView
 {
-    int screenHeight = self.view.frame.size.height;
-    int screenWidth = self.view.frame.size.width;
-    //Label
-    self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6), (screenWidth*0.9), (screenHeight*0.3))];
-    self.label.text = @"Most designers work with colors using the hexadecimal system. UIColor by default only really works well with plain RGB values between 0 and 1.";
-    self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
-    self.label.numberOfLines = 0;
-    [self.view addSubview:self.label];
-    //Label1
-    self.label1 = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.15, (screenWidth*0.75), (30.0))];
-    self.label1.text = @"Hex string";
-    self.label1.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
-    self.label1.numberOfLines = 0;
-    [self.view addSubview:self.label1];
-    //Label2
-    self.label2 = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.25), (screenWidth*0.75), 30.0)];
-    self.label2.text = @"Opacity";
-    self.label2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
-    self.label2.numberOfLines = 0;
-    [self.view addSubview:self.label2];
-
+    if (!_hexView){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        CGRect  viewRect = CGRectMake(screenWidth*0.5-50.0, screenHeight*0.45, 100.0, 100.0);
+        self.hexView = [[UIView alloc] initWithFrame:viewRect];
+        self.hexView.backgroundColor = [UIColor hex:0xFF2D55 alpha:0.9];
+        self.hexView.layer.cornerRadius = 8.0;
+        self.hexView.layer.masksToBounds = YES;
+    }
+    return _hexView;
 }
 
-- (void) textFieldCreate
+- (UILabel *)mainLabel
 {
-    int screenHeight = self.view.frame.size.height;
-    int screenWidth = self.view.frame.size.width;
-    //Hex code text field
+    if (!_mainLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6), (screenWidth*0.9), (screenHeight*0.3))];
+        self.mainLabel.text = @"Most designers work with colors using the hexadecimal system. UIColor by default only really works well with plain RGB values between 0 and 1.";
+        self.mainLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
+        self.mainLabel.numberOfLines = 0;
+    }
+    return _mainLabel;
+}
+
+- (UILabel *)hexLabel
+{
+    if (!_hexLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.hexLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.15, (screenWidth*0.75), (30.0))];
+        self.hexLabel.text = @"Hex string";
+        self.hexLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
+        self.hexLabel.numberOfLines = 0;
+    }
+    return _hexLabel;
+}
+
+- (UILabel *)opacityLabel
+{
+    if (!_opacityLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.opacityLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.25), (screenWidth*0.75), 30.0)];
+        self.opacityLabel.text = @"Opacity";
+        self.opacityLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
+        self.opacityLabel.numberOfLines = 0;
+    }
+    return _opacityLabel;
+}
+
+- (OriginateValidatedTextField *)hexTextField
+{   if (!_hexTextField){
+    CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+    CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     self.hexTextField = [[OriginateValidatedTextField alloc] init];
     self.hexTextField.frame = CGRectMake(screenWidth*0.55, screenHeight*0.15, 140.0, 30.0);
     self.hexTextField.delegate = self;
@@ -114,36 +138,45 @@
     };
     self.hexTextField.text = @"#FF2D55";
     self.hexTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    [self.view addSubview:self.hexTextField];
-    //Opacity text field
-    self.opacityTextField = [[OriginateValidatedTextField alloc] init];
-    self.opacityTextField.delegate = self;
-    self.opacityTextField.frame = CGRectMake(screenWidth*0.55, screenHeight*0.25, 140.0, 30.0);
-    self.opacityTextField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
-    [self.opacityTextField setReturnKeyType:UIReturnKeyDone];
-    self.opacityTextField.borderStyle = UITextBorderStyleRoundedRect;
-    self.opacityTextField.validationMode = OriginateTextFieldValidationModeLive;
-    self.opacityTextField.validationBlock = ^BOOL(NSString *text) {
-        if ([text floatValue]) {
-            double myDouble = [text doubleValue];
-            return (myDouble <= 1) && (0<= myDouble);
-        }
-        return NO;
-    };
-    self.opacityTextField.validationChangedBlock = ^(BOOL isValid, OriginateValidatedTextField *textField) {
-        if (isValid) {
-            _secondValid = YES;
-            textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
-        }
-        else {
-            _secondValid = NO;
-            textField.backgroundColor = [UIColor hex:0xFF3B30 alpha:0.5];
-        }
-    };
-    self.opacityTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.opacityTextField.text = @"0.9";
-    [self.view addSubview:self.opacityTextField];
+    }
+    return _hexTextField;
 }
+
+- (OriginateValidatedTextField *)opacityTextField
+{
+    if (!_opacityTextField){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.opacityTextField = [[OriginateValidatedTextField alloc] init];
+        self.opacityTextField.delegate = self;
+        self.opacityTextField.frame = CGRectMake(screenWidth*0.55, screenHeight*0.25, 140.0, 30.0);
+        self.opacityTextField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
+        [self.opacityTextField setReturnKeyType:UIReturnKeyDone];
+        self.opacityTextField.borderStyle = UITextBorderStyleRoundedRect;
+        self.opacityTextField.validationMode = OriginateTextFieldValidationModeLive;
+        self.opacityTextField.validationBlock = ^BOOL(NSString *text) {
+            if ([text floatValue]) {
+                double myDouble = [text doubleValue];
+                return (myDouble <= 1) && (0<= myDouble);
+            }
+            return NO;
+        };
+        self.opacityTextField.validationChangedBlock = ^(BOOL isValid, OriginateValidatedTextField *textField) {
+            if (isValid) {
+                _secondValid = YES;
+                textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
+            }
+            else {
+                _secondValid = NO;
+                textField.backgroundColor = [UIColor hex:0xFF3B30 alpha:0.5];
+            }
+        };
+        self.opacityTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        self.opacityTextField.text = @"0.9";
+    }
+    return _opacityTextField;
+}
+
 - (UIColor *)colorFromHexString:(NSString *)hexString
 {
     unsigned rgbValue = 0;

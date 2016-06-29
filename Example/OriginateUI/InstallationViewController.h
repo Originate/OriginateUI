@@ -6,8 +6,8 @@
 //  Copyright © 2016 originate.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface InstallationViewController : UIViewController
-<UITextViewDelegate>
+@interface InstallationViewController : UIViewController <UITextViewDelegate>
+
 @end

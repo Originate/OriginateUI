@@ -12,15 +12,15 @@
 
 @interface InstallationViewController ()
 
-@property UILabel *instLabel;
-@property UILabel *reqLabel;
-@property UILabel *useLabel;
-@property UILabel *label1;
-@property UILabel *label2;
-@property UILabel *label3;
-@property UILabel *label4;
-@property UITextView *textView1;
-@property UITextView *textView2;
+@property (nonatomic, strong) UILabel *instLabel;
+@property (nonatomic, strong) UILabel *reqLabel;
+@property (nonatomic, strong) UILabel *useLabel;
+@property (nonatomic, strong) UILabel *instLabel2;
+@property (nonatomic, strong) UILabel *reqLabel2;
+@property (nonatomic, strong) UILabel *useLabel2;
+@property (nonatomic, strong) UILabel *endLabel;
+@property (nonatomic, strong) UITextView *textViewFirst;
+@property (nonatomic, strong) UITextView *textViewSecond;
 
 @end
 
@@ -31,80 +31,138 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.title = @"Installation";
-    [self labelCreate];
-    [self textFieldCreate];
-}
-
-- (void)labelCreate
-{
-    int screenHeight = self.view.frame.size.height;
-    int screenWidth = self.view.frame.size.width;
-    //instLabel setup
-    self.instLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, screenHeight*0.2, screenWidth*0.8, 50.0)];
-    self.instLabel.text = @"Install with CocoaPods";
-    self.instLabel.textColor = [UIColor whiteColor];
-    self.instLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
-    self.instLabel.numberOfLines = 0;
     [self.view addSubview:self.instLabel];
-    //reqLabel setup
-    self.reqLabel = [[UILabel alloc] initWithFrame:CGRectMake(10., screenHeight*0.45, screenWidth*0.8, 50.0)];
-    self.reqLabel.text = @"Requirements";
-    self.reqLabel.textColor = [UIColor whiteColor];
-    self.reqLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
-    self.reqLabel.numberOfLines = 0;
     [self.view addSubview:self.reqLabel];
-    //useLabel setup
-    self.useLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, screenHeight*0.6, screenWidth*0.8, 50.0)];
-    self.useLabel.text = @"Usage: Import the Framework";
-    self.useLabel.textColor = [UIColor whiteColor];
-    self.useLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
-    self.useLabel.numberOfLines = 0;
     [self.view addSubview:self.useLabel];
-    //label1 setup
-    self.label1 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.25, screenWidth*0.8, 50.0)];
-    self.label1.text = @"Add the following lines to your Podfile and run pod install.";
-    self.label1.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-    self.label1.numberOfLines = 0;
-    [self.view addSubview:self.label1];
-    //label2 setup
-    self.label2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.5, screenWidth*0.8, 50.0)];
-    self.label2.text = @"iOS 8.0+";
-    self.label2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-    self.label2.numberOfLines = 0;
-    [self.view addSubview:self.label2];
-    //label3 setup
-    self.label3 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.65, screenWidth*0.8, 50.0)];
-    self.label3.text = @"Add the following line wherever you want to access the framework:";
-    self.label3.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-    self.label3.numberOfLines = 0;
-    [self.view addSubview:self.label3];
-    //label4 setup
-    self.label4 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.825, screenWidth*0.8, 85.0)];
-    self.label4.text = @"You now have access to a wide range of categories and classes that simplify everyday life when writing user interface related code.";
-    self.label4.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-    self.label4.numberOfLines = 0;
-    [self.view addSubview:self.label4];
+    [self.view addSubview:self.instLabel2];
+    [self.view addSubview:self.reqLabel2];
+    [self.view addSubview:self.useLabel2];
+    [self.view addSubview:self.endLabel];
+    [self.view addSubview:self.textViewFirst];
+    [self.view addSubview:self.textViewSecond];
 }
 
-- (void)textFieldCreate
+- (UILabel *)instLabel
 {
-    int screenHeight = self.view.frame.size.height;
-    int screenWidth = self.view.frame.size.width;
-    //textView1 setup
-    self.textView1 = [[UITextView alloc] initWithFrame:CGRectMake(40.0, (screenHeight*0.35), (screenWidth-80.0), (screenHeight*0.075))];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.textView1 setReturnKeyType:UIReturnKeyDone];
-    self.textView1.delegate = self;
-    self.textView1.text = @"source 'https://github.com/Originate/CocoaPods.git'"
-    "pod 'OriginateUI'";
-    [self.view addSubview:self.textView1];
-    //textView2 setup
-    self.textView2 = [[UITextView alloc] initWithFrame:CGRectMake(40, (self.view.frame.size.height*.75), (self.view.frame.size.width-80), (self.view.frame.size.height*.075))];
-    [self.textView2 setReturnKeyType:UIReturnKeyDone];
-    self.textView2.delegate = self;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.textView2.text = @"@import OriginateUI;";
-    [self.view addSubview:_textView2];
+    if (!_instLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.instLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, screenHeight*0.2, screenWidth*0.8, 50.0)];
+        self.instLabel.text = @"Install with CocoaPods";
+        self.instLabel.textColor = [UIColor whiteColor];
+        self.instLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
+        self.instLabel.numberOfLines = 0;
+    }
+    return _instLabel;
+}
+
+- (UILabel *)reqLabel
+{
+    if (!_reqLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.reqLabel = [[UILabel alloc] initWithFrame:CGRectMake(10., screenHeight*0.45, screenWidth*0.8, 50.0)];
+        self.reqLabel.text = @"Requirements";
+        self.reqLabel.textColor = [UIColor whiteColor];
+        self.reqLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
+        self.reqLabel.numberOfLines = 0;
+    }
+    return _reqLabel;
+}
+
+- (UILabel *)useLabel
+{
+    if (!_useLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.useLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, screenHeight*0.6, screenWidth*0.8, 50.0)];
+        self.useLabel.text = @"Usage: Import the Framework";
+        self.useLabel.textColor = [UIColor whiteColor];
+        self.useLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
+        self.useLabel.numberOfLines = 0;
+    }
+    return _useLabel;
+}
+
+- (UILabel *)instLabel2
+{
+    if (!_instLabel2){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.instLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.25, screenWidth*0.8, 50.0)];
+        self.instLabel2.text = @"Add the following lines to your Podfile and run pod install.";
+        self.instLabel2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.instLabel2.numberOfLines = 0;
+    }
+    return _instLabel2;
+}
+
+- (UILabel *)reqLabel2
+{
+    if (!_reqLabel2){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.reqLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.5, screenWidth*0.8, 50.0)];
+        self.reqLabel2.text = @"iOS 8.0+";
+        self.reqLabel2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.reqLabel2.numberOfLines = 0;
+    }
+    return _reqLabel2;
+}
+
+- (UILabel *)useLabel2
+{
+    if (!_useLabel2){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.useLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.65, screenWidth*0.8, 50.0)];
+        self.useLabel2.text = @"Add the following line wherever you want to access the framework:";
+        self.useLabel2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.useLabel2.numberOfLines = 0;
+    }
+    return _useLabel2;
+}
+
+- (UILabel *)endLabel
+{
+    if (!_endLabel){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.endLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.825, screenWidth*0.8, 85.0)];
+        self.endLabel.text = @"You now have access to a wide range of categories and classes that simplify everyday life when writing user interface related code.";
+        self.endLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.endLabel.numberOfLines = 0;
+    }
+    return _endLabel;
+}
+
+- (UITextView *)textViewFirst
+{
+    if (!_textViewFirst){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.textViewFirst = [[UITextView alloc] initWithFrame:CGRectMake(40.0, (screenHeight*0.35), (screenWidth-80.0), (screenHeight*0.075))];
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        [self.textViewFirst setReturnKeyType:UIReturnKeyDone];
+        self.textViewFirst.delegate = self;
+        self.textViewFirst.text = @"source 'https://github.com/Originate/CocoaPods.git'"
+        "pod 'OriginateUI'";
+    }
+    return _textViewFirst;
+}
+
+- (UITextView *)textViewSecond
+{
+    if (!_textViewSecond){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (self.view.frame.size.height*.75), (self.view.frame.size.width-80), (self.view.frame.size.height*.075))];
+        [self.textViewSecond setReturnKeyType:UIReturnKeyDone];
+        self.textViewSecond.delegate = self;
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        self.textViewSecond.text = @"@import OriginateUI;";
+    }
+    return _textViewSecond;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

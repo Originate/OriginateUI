@@ -6,11 +6,11 @@
 //  Copyright © 2016 originate.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 @import OriginateUI;
 
-@interface HexadecimalViewController : UIViewController
+@interface HexadecimalViewController : UIViewController <UITextFieldDelegate>
 
-<UITextFieldDelegate>
 - (UIColor *)colorFromHexString:(NSString *)hexString;
+
 @end

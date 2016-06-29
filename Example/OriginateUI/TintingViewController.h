@@ -6,10 +6,8 @@
 //  Copyright © 2016 originate.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface TintingViewController : UIViewController
-
-<UITextFieldDelegate>
+@interface TintingViewController : UIViewController <UITextFieldDelegate>
 
 @end

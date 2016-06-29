@@ -20,9 +20,9 @@
 
 @interface TableViewController () <UITableViewDelegate,UITableViewDataSource>
 
-@property (strong,nonatomic) UITableView *table;
-@property (strong,nonatomic) NSArray *labels;
-@property (strong,nonatomic) NSArray *details;
+@property (nonatomic, strong) UITableView *table;
+@property (nonatomic, strong) NSArray *labels;
+@property (nonatomic, strong) NSArray *details;
 
 @end
 
@@ -33,22 +33,43 @@
     [super viewDidLoad];
     self.title = @"Features";
     self.view.backgroundColor = [UIColor lightGrayColor];
-    self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views",@"Motion Interpolation",
-                     @"Image Tinting", @"Hexadecimal Colors", @"Installation", @"Liscense",];
-    self.details = @[
-                     @"Specifiy insets for text rendering or other elements",
-                     @"For text fields that would benefit from validation.",
-                     @"For text fields that would benefit from validation.",
-                     @"Enables easy access to motion interpolation on views.",
-                     @"Two methods on UIImage to make tinting easier.",
-                     @"Allows use of hexadecimal colors with UIColor.",
-                     @"Install OriginateUI with just a few lines of code.",
-                     @"OriginateUI is available under the MIT license.",];
-    self.table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.table.backgroundColor = [UIColor lightGrayColor];
-    self.table.delegate = self;
-    self.table.dataSource = self;
     [self.view addSubview:self.table];
+}
+
+- (UITableView *)table
+{
+    if (!_table){
+        self.table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        self.table.backgroundColor = [UIColor lightGrayColor];
+        self.table.delegate = self;
+        self.table.dataSource = self;
+    }
+    return _table;
+}
+
+- (NSArray *)details
+{
+    if (!_details){
+        self.details = @[
+                         @"Specifiy insets for text rendering or other elements",
+                         @"For text fields that would benefit from validation.",
+                         @"For text fields that would benefit from validation.",
+                         @"Enables easy access to motion interpolation on views.",
+                         @"Two methods on UIImage to make tinting easier.",
+                         @"Allows use of hexadecimal colors with UIColor.",
+                         @"Install OriginateUI with just a few lines of code.",
+                         @"OriginateUI is available under the MIT license.",];
+    }
+    return _details;
+}
+
+- (NSArray *)labels
+{
+    if (!_labels) {
+        self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views",@"Motion Interpolation",
+                         @"Image Tinting", @"Hexadecimal Colors", @"Installation", @"Liscense",];
+    }
+    return _labels;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -17,12 +17,12 @@
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     self.window.rootViewController = navigationController;
-    //Navigation title
+
     navigationController.navigationBar.topItem.title = @"OriginateUI";
     [navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor blackColor],
        NSFontAttributeName:[UIFont fontWithName:@"CircularPro-Medium" size:20.0]}];
-    //Navigation buttons
+
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowOffset = CGSizeMake(0.0, 0.0);
     shadow.shadowColor = [UIColor whiteColor];
@@ -35,10 +35,6 @@
      forState:UIControlStateNormal];
     [self.window makeKeyAndVisible];
     return YES;
-}
-
-- (void) setupNavBar {
-    
 }
 
 @end

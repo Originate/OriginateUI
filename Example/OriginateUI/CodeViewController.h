@@ -6,12 +6,11 @@
 //  Copyright © 2016 originate.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface CodeViewController : UIViewController
+@interface CodeViewController : UIViewController <UITextViewDelegate>
 
-<UITextViewDelegate>
-@property UITextView *textView;
-@property NSString *myString;
+@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) NSString *myString;
 
 @end

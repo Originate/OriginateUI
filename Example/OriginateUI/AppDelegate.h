@@ -11,6 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 #pragma mark - Properties
-@property (strong, nonatomic, readwrite) UIWindow *window;
+@property (nonatomic, strong, readwrite) UIWindow *window;
 
 @end

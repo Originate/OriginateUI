@@ -20,7 +20,7 @@
 
 #pragma mark - Properties
 @property (nonatomic, strong, readwrite) UIView *blueBox;
-@property UILabel *label;
+@property (nonatomic, strong)  UILabel *label;
 
 @end
 

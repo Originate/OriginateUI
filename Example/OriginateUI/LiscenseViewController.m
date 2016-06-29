@@ -12,7 +12,7 @@
 @interface LiscenseViewController ()
 
 @property (nonatomic, strong) NSString *myString;
-@property UILabel *label;
+@property (nonatomic, strong) UILabel *label;
 
 @end
 
@@ -23,15 +23,22 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.title = @"Liscense";
-    int screenHeight = self.view.frame.size.height;
-    int screenWidth = self.view.frame.size.width;
-    //Text label
     [self setString];
-    self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.125, (screenHeight*0.125), (screenWidth*0.75), (screenHeight*0.875))];
-    self.label.text = self.myString;
-    self.label.font = [self.label.font fontWithSize:12];
-    self.label.numberOfLines = 0;
     [self.view addSubview:self.label];
+}
+
+- (UILabel *)label
+{
+    if (!_label){
+        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.125, (screenHeight*0.125),
+                                                               (screenWidth*0.75), (screenHeight*0.875))];
+        self.label.text = self.myString;
+        self.label.font = [self.label.font fontWithSize:12];
+        self.label.numberOfLines = 0;
+    }
+    return _label;
 }
 
 -(void)setString

@@ -17,9 +17,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Font Bureau - MillerDisplay-Light.otf</string>
-		<string>Font Bureau - MillerDisplay-Roman.otf</string>
 		<string>CircularPro-Book.otf</string>
 		<string>CircularPro-Medium.otf</string>
+		<string>Font Bureau - MillerDisplay-Roman.otf</string>
 	</array>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
