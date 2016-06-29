@@ -47,7 +47,6 @@
     [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 
-
     UIButton *vButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     vButton.frame = CGRectMake((screenWidth*0.5-55.0), screenHeight*0.55, 110.0, 50.0);
     vButton.titleLabel.font = [UIFont systemFontOfSize:22];

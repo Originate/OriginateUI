@@ -156,7 +156,7 @@
     if (!_textViewSecond){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (self.view.frame.size.height*.75), (self.view.frame.size.width-80), (self.view.frame.size.height*.075))];
+        self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (screenHeight*.75), (screenWidth-80.0), (screenHeight*0.075))];
         [self.textViewSecond setReturnKeyType:UIReturnKeyDone];
         self.textViewSecond.delegate = self;
         self.automaticallyAdjustsScrollViewInsets = NO;
