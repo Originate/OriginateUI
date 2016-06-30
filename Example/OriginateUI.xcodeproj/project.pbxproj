@@ -23,6 +23,8 @@
 		5DE905711D2316720012001F /* CircularPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB87521D1C7D0F00189E43 /* CircularPro-Book.otf */; };
 		5DE905721D2316770012001F /* Font Bureau - MillerDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB873E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf */; };
 		5DE905751D23187E0012001F /* Font Bureau - MillerDisplay-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DE905741D23187E0012001F /* Font Bureau - MillerDisplay-Roman.otf */; };
+		5DFCE7541D25826700907318 /* InspectableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFCE7521D25826700907318 /* InspectableViewController.m */; };
+		5DFCE7551D25826700907318 /* InspectableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCE7531D25826700907318 /* InspectableViewController.xib */; };
 		B1BF0D471B45F6698A535F60 /* Pods_OriginateUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1AA4E4876C858955E347E9 /* Pods_OriginateUI_Example.framework */; };
 		C33FA58EE1AC96EB863DE1BC /* Pods_OriginateUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E8EBF5B591EC4D19F85D05 /* Pods_OriginateUI_Tests.framework */; };
 		F96B54261BB18B9D004B884D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B54251BB18B9D004B884D /* main.m */; };
@@ -74,6 +76,9 @@
 		5DCB87501D1C7D0F00189E43 /* CircularPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-Medium.otf"; sourceTree = "<group>"; };
 		5DCB87521D1C7D0F00189E43 /* CircularPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularPro-Book.otf"; sourceTree = "<group>"; };
 		5DE905741D23187E0012001F /* Font Bureau - MillerDisplay-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Bureau - MillerDisplay-Roman.otf"; sourceTree = "<group>"; };
+		5DFCE7511D25826700907318 /* InspectableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableViewController.h; sourceTree = "<group>"; };
+		5DFCE7521D25826700907318 /* InspectableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableViewController.m; sourceTree = "<group>"; };
+		5DFCE7531D25826700907318 /* InspectableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspectableViewController.xib; sourceTree = "<group>"; };
 		960416D0AB5D03CE7631B10B /* Pods-OriginateUI-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1E8EBF5B591EC4D19F85D05 /* Pods_OriginateUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A50A1CF90845E995BD8331 /* Pods-OriginateUI-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Tests/Pods-OriginateUI-Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +195,7 @@
 				5D1DDB231D1B040E0007A160 /* Hexadecimal */,
 				5D1DDB241D1B041A0007A160 /* Installation */,
 				5D1DDB251D1B04260007A160 /* Liscense */,
+				5DFCE7561D25828100907318 /* Inspectable */,
 			);
 			name = "Detail Views";
 			sourceTree = "<group>";
@@ -248,6 +254,16 @@
 				5DCB873E1D1C7CFF00189E43 /* Font Bureau - MillerDisplay-Light.otf */,
 			);
 			name = "Miller Family";
+			sourceTree = "<group>";
+		};
+		5DFCE7561D25828100907318 /* Inspectable */ = {
+			isa = PBXGroup;
+			children = (
+				5DFCE7511D25826700907318 /* InspectableViewController.h */,
+				5DFCE7521D25826700907318 /* InspectableViewController.m */,
+				5DFCE7531D25826700907318 /* InspectableViewController.xib */,
+			);
+			name = Inspectable;
 			sourceTree = "<group>";
 		};
 		BE1C4FC26E91BC989DF042BA /* Frameworks */ = {
@@ -430,6 +446,7 @@
 				5DE905711D2316720012001F /* CircularPro-Book.otf in Resources */,
 				F96B54341BB18B9D004B884D /* LaunchScreen.xib in Resources */,
 				F96B54311BB18B9D004B884D /* Images.xcassets in Resources */,
+				5DFCE7551D25826700907318 /* InspectableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFCE7541D25826700907318 /* InspectableViewController.m in Sources */,
 				5D1DDB1C1D1B03E30007A160 /* InstallationViewController.m in Sources */,
 				5D1DDB101D1B039A0007A160 /* GradientViewController.m in Sources */,
 				5D54E2B11D19E2F90006D14F /* TextFieldViewController.m in Sources */,

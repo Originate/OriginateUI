@@ -17,6 +17,7 @@
 #import "LiscenseViewController.h"
 #import "MotionViewController.h"
 #import "OriginateValidatedTextField.h"
+#import "InspectableViewController.h"
 
 @interface TableViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -57,6 +58,7 @@
                          @"Enables easy access to motion interpolation on views.",
                          @"Two methods on UIImage to make tinting easier.",
                          @"Allows use of hexadecimal colors with UIColor.",
+                         @"Observe the IBInspectable properties in xcode.",
                          @"Install OriginateUI with just a few lines of code.",
                          @"OriginateUI is available under the MIT license.",];
     }
@@ -67,7 +69,7 @@
 {
     if (!_labels) {
         self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views",@"Motion Interpolation",
-                         @"Image Tinting", @"Hexadecimal Colors", @"Installation", @"Liscense",];
+                         @"Image Tinting", @"Hexadecimal Colors", @"Inspectable properties", @"Installation", @"Liscense",];
     }
     return _labels;
 }
@@ -89,7 +91,7 @@
 
 - (CGFloat)tableView: (UITableView*)tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
 {
-    return (self.view.frame.size.height - 64.0)/8.0;
+    return (self.view.frame.size.height - 64.0)/9.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,11 +151,17 @@
             break;
         case 6:
         {
+            InspectableViewController *inspectableViewController =  [[InspectableViewController alloc] init];
+            [self.navigationController pushViewController:inspectableViewController animated:YES];
+        }
+            break;
+        case 7:
+        {
             InstallationViewController *installationViewController =  [[InstallationViewController alloc] init];
             [self.navigationController pushViewController:installationViewController animated:YES];
         }
             break;
-        case 7:
+        case 8:
         {
             LiscenseViewController *liscenseViewController =  [[LiscenseViewController alloc] init];
             [self.navigationController pushViewController:liscenseViewController animated:YES];

@@ -8,11 +8,13 @@
 
 @import UIKit;
 
+IB_DESIGNABLE
+
 @interface OriginateGradientView : UIView
 
 #pragma mark - Properties
-@property (nonatomic, strong, readwrite) UIColor *firstColor;
-@property (nonatomic, strong, readwrite) UIColor *secondColor;
+@property (nonatomic, strong, readwrite) IBInspectable UIColor *firstColor;
+@property (nonatomic, strong, readwrite) IBInspectable UIColor *secondColor;
 @property (nonatomic, strong, readwrite) CAGradientLayer *gradientLayer;
 
 #pragma mark - Methods
