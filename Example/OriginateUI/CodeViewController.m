@@ -7,6 +7,7 @@
 //
 
 #import "CodeViewController.h"
+@import OriginateUI;
 
 @interface CodeViewController ()
 
@@ -18,9 +19,10 @@
 {
     [super viewDidLoad];
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, (self.view.frame.size.height*0.25f), (self.view.frame.size.width-10.0f), (self.view.frame.size.height*0.15f))];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.textView.delegate = self;
+    [self.textView setBackgroundColor: [UIColor hex:0xfaebd7]];
     [self.textView setReturnKeyType:UIReturnKeyDone];
     self.textView.text = self.myString;
     [self.view addSubview:_textView];

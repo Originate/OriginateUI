@@ -70,11 +70,19 @@ view.motionInterpolationEnabled = YES;
 ```
 
 ## Image Tinting (Category on UIImage)
-To make the *tinting* of images easier, we provide to methods on `UIImage`:
+To make the *tinting* of images easier, we provide two methods on `UIImage`:
 
 ```objective-c
 UIImage *logo = [UIImage imageNamed:@"logo"];
 UIImage *blackLogo = [logo imageTintedWithColor:[UIColor blackColor]];
+```
+
+## Circular Images (Category on UIImage)
+To easily make circular images with text, we have a category on `UIImage`:
+
+```objective-c
+UIImage *circle = [UIImage circularImageWithText:@\"Example\" textColor:[UIColor hex:0x2B2B2B] backgroundColor:[UIColor hex:0xFF2D55] size:"
+"exampleSize];"
 ```
 
 ## Hexadecimal Colors (Category on UIColor)

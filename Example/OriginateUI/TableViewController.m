@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     self.title = @"Features";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.table];
 }
 
@@ -40,7 +40,7 @@
 {
     if (!_table){
         self.table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        self.table.backgroundColor = [UIColor lightGrayColor];
+        self.table.backgroundColor = [UIColor whiteColor];
         self.table.delegate = self;
         self.table.dataSource = self;
     }
@@ -85,7 +85,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.backgroundColor = [UIColor whiteColor];
 }
 
 - (CGFloat)tableView: (UITableView*)tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
@@ -102,7 +102,6 @@
     }
     cell.textLabel.text =  [self.labels objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"CircularPro-Book" size:17.0];
-    cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.text = [self.details objectAtIndex:indexPath.row];
     cell.detailTextLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 12.0];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

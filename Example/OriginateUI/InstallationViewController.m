@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Installation";
     [self.view addSubview:self.instLabel];
     [self.view addSubview:self.reqLabel];
@@ -49,7 +49,6 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.instLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, screenHeight*0.2, screenWidth*0.8, 50.0)];
         self.instLabel.text = @"Install with CocoaPods";
-        self.instLabel.textColor = [UIColor whiteColor];
         self.instLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
         self.instLabel.numberOfLines = 0;
     }
@@ -63,7 +62,6 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.reqLabel = [[UILabel alloc] initWithFrame:CGRectMake(10., screenHeight*0.45, screenWidth*0.8, 50.0)];
         self.reqLabel.text = @"Requirements";
-        self.reqLabel.textColor = [UIColor whiteColor];
         self.reqLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
         self.reqLabel.numberOfLines = 0;
     }
@@ -77,7 +75,6 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.useLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, screenHeight*0.6, screenWidth*0.8, 50.0)];
         self.useLabel.text = @"Usage: Import the Framework";
-        self.useLabel.textColor = [UIColor whiteColor];
         self.useLabel.font = [UIFont fontWithName:@"CircularPro-Medium" size:22];
         self.useLabel.numberOfLines = 0;
     }
@@ -144,6 +141,7 @@
         self.textViewFirst = [[UITextView alloc] initWithFrame:CGRectMake(40.0, (screenHeight*0.35), (screenWidth-80.0), (screenHeight*0.075))];
         self.automaticallyAdjustsScrollViewInsets = NO;
         [self.textViewFirst setReturnKeyType:UIReturnKeyDone];
+        [self.textViewFirst setBackgroundColor: [UIColor hex:0xfaebd7]];
         self.textViewFirst.delegate = self;
         self.textViewFirst.text = @"source 'https://github.com/Originate/CocoaPods.git'"
         "pod 'OriginateUI'";
@@ -158,6 +156,7 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (screenHeight*.75), (screenWidth-80.0), (screenHeight*0.075))];
         [self.textViewSecond setReturnKeyType:UIReturnKeyDone];
+        [self.textViewSecond setBackgroundColor: [UIColor hex:0xfaebd7]];
         self.textViewSecond.delegate = self;
         self.automaticallyAdjustsScrollViewInsets = NO;
         self.textViewSecond.text = @"@import OriginateUI;";

@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     self.title = @"Motion Interpolation";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     [self.view addSubview:self.label];

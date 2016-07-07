@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     self.title = @"Circle Images";
@@ -79,9 +79,9 @@
     CodeViewController *codeView = [[CodeViewController alloc] init];
     codeView.myString = @"   UIImageView *imageView =[[UIImageView alloc] initWithFrame:testRect;"
     "CGSize mySize = CGSizeMake(50, 50);"
-    "UIImage *test = [UIImage circularImageWithText:@\"Example\" textColor:[UIColor hex:0x2B2B2B] backgroundColor:[UIColor hex:0xFF2D55] size:"
+    "UIImage *circle = [UIImage circularImageWithText:@\"Example\" textColor:[UIColor hex:0x2B2B2B] backgroundColor:[UIColor hex:0xFF2D55] size:"
     "mySize];"
-    "imageView.image = test;"
+    "imageView.image = circle;"
     "[self.view addSubview:imageView];";
     [self.navigationController pushViewController:codeView animated:YES];
 }
