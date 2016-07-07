@@ -8,7 +8,6 @@
 
 #import "TableViewController.h"
 #import "TextFieldViewController.h"
-#import "MyViewController.h"
 #import "GradientViewController.h"
 #import "ValidationViewController.h"
 #import "TintingViewController.h"
@@ -16,8 +15,8 @@
 #import "InstallationViewController.h"
 #import "LiscenseViewController.h"
 #import "MotionViewController.h"
-#import "OriginateValidatedTextField.h"
-#import "InspectableViewController.h"
+#import "CircleViewController.h"
+@import OriginateUI;
 
 @interface TableViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -58,7 +57,7 @@
                          @"Enables easy access to motion interpolation on views.",
                          @"Two methods on UIImage to make tinting easier.",
                          @"Allows use of hexadecimal colors with UIColor.",
-                         @"Observe the IBInspectable properties in xcode.",
+                         @"Easily create circular labeled images.",
                          @"Install OriginateUI with just a few lines of code.",
                          @"OriginateUI is available under the MIT license.",];
     }
@@ -69,7 +68,7 @@
 {
     if (!_labels) {
         self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views",@"Motion Interpolation",
-                         @"Image Tinting", @"Hexadecimal Colors", @"Inspectable properties", @"Installation", @"Liscense",];
+                         @"Image Tinting", @"Hexadecimal Colors", @"Circle Image", @"Installation", @"Liscense",];
     }
     return _labels;
 }
@@ -107,6 +106,7 @@
     cell.detailTextLabel.text = [self.details objectAtIndex:indexPath.row];
     cell.detailTextLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 12.0];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    [cell setSeparatorsToFullWidth];
     return cell;
 }
 
@@ -151,8 +151,8 @@
             break;
         case 6:
         {
-            InspectableViewController *inspectableViewController =  [[InspectableViewController alloc] init];
-            [self.navigationController pushViewController:inspectableViewController animated:YES];
+            CircleViewController *circleViewController =  [[CircleViewController alloc] init];
+            [self.navigationController pushViewController:circleViewController animated:YES];
         }
             break;
         case 7:

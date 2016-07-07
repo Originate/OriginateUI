@@ -194,7 +194,6 @@
     codeView.myString = @"UIImage *logo = [UIImage imageNamed:@\"logo\"];\n"
     "UIImage *blackLogo = [logo imageTintedWithColor:[UIColor blackColor]];";
     [self.navigationController pushViewController:codeView animated:YES];
-    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
