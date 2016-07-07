@@ -25,7 +25,7 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-    self.title = @"Circle Image";
+    self.title = @"Circle Images";
     
     UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-50,screenHeight*0.35, 100, 100)];
     CGSize mySize = CGSizeMake(50, 50);
@@ -36,7 +36,7 @@
     [self.view addSubview:self.secondLabel];
     
     mySize = CGSizeMake(75, 75);
-    UIImageView *secondImageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-50,screenHeight*0.65, 120, 120)];
+    UIImageView *secondImageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-60,screenHeight*0.7, 120, 120)];
     UIImage *secondImage = [UIImage circularImageWithText:@"O.K" textColor:[UIColor hex:0xFFFFFF] backgroundColor:[UIColor hex:0xC86EDF] size:mySize];
     secondImageView.image = secondImage;
     [self.view addSubview:secondImageView];
@@ -66,7 +66,7 @@
     if (!_secondLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.425), (screenWidth*0.9), (screenHeight*0.3))];
+        self.secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.45), (screenWidth*0.9), (screenHeight*0.3))];
         self.secondLabel.text = @"It is simple and fast to set the radius, the text, and the color of the circle and the text. All it takes is a few lines of code.";
         self.secondLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.secondLabel.numberOfLines = 0;

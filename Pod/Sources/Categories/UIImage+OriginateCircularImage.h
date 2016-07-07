@@ -8,6 +8,7 @@
 
 @import UIKit;
 
+
 @interface UIImage (OriginateCircularImage)
 
 #pragma mark - Methods

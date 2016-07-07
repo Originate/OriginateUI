@@ -49,7 +49,7 @@
     [self.view addSubview:codeButton];
 
     UIButton *buttonGradient = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    buttonGradient.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.35), 110.0, 40.0);
+    buttonGradient.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.33), 110.0, 40.0);
     [buttonGradient setTitle:@"Go" forState:UIControlStateNormal];
     buttonGradient.titleLabel.font = [UIFont systemFontOfSize:22];
     [buttonGradient addTarget:self action:@selector(buttonGradientPressed) forControlEvents:UIControlEventTouchUpInside];
@@ -61,9 +61,9 @@
     if (!_mainLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6), (screenWidth*0.9), (screenHeight*0.3))];
-        self.mainLabel.text = @"Whilst CoreAnimation provides us with CAGradientLayer it is not as comfortable to use as one would like. For this reason we supply Originate Gradient View.";
-        self.mainLabel.font = [self.mainLabel.font fontWithSize:20];
+        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.025, (screenHeight*0.55), (screenWidth*0.95), (screenHeight*0.4))];
+        self.mainLabel.text = @"Whilst CoreAnimation provides us with CAGradientLayer it is not as comfortable to use as one would like. For this reason we supply Originate Gradient View. This is also compatible with IBInspectable and IBDesignable. Simply open a view in a xib or storyboard, and set it to Gradient View. There the attributes of the first and second colors can be seen and modified.";
+        self.mainLabel.font = [self.mainLabel.font fontWithSize:16];
         self.mainLabel.numberOfLines = 0;
     }
     return _mainLabel;
@@ -168,7 +168,7 @@
     if (!_gradientView){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        CGRect  viewRect = CGRectMake(screenWidth*0.5-50.0, screenHeight*0.45, 100.0, 100.0);
+        CGRect  viewRect = CGRectMake(screenWidth*0.5-50.0, screenHeight*0.4, 100.0, 100.0);
         self.gradientView = [[OriginateGradientView alloc] initWithFrame:viewRect];
         self.gradientView.firstColor = [UIColor yellowColor];
         self.gradientView.secondColor = [UIColor cyanColor];

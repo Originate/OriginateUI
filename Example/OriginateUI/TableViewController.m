@@ -67,8 +67,8 @@
 - (NSArray *)labels
 {
     if (!_labels) {
-        self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views",@"Motion Interpolation",
-                         @"Image Tinting", @"Hexadecimal Colors", @"Circle Image", @"Installation", @"Liscense",];
+        self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views", @"Motion Interpolation",
+                         @"Image Tinting", @"Hexadecimal Colors", @"Circle Images", @"Installation", @"Liscense",];
     }
     return _labels;
 }

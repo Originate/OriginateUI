@@ -8,12 +8,14 @@
 
 @import UIKit;
 
+IB_DESIGNABLE
+
 @interface OriginateTextField : UITextField
 
 #pragma mark - Properties
-@property (nonatomic, assign, readwrite) UIEdgeInsets textEdgeInsets;
-@property (nonatomic, assign, readwrite) UIEdgeInsets rightViewInsets;
-@property (nonatomic, assign, readwrite) UIEdgeInsets leftViewInsets;
-@property (nonatomic, assign, readwrite) UIEdgeInsets clearButtonEdgeInsets;
+@property (nonatomic, assign, readwrite) IBInspectable UIEdgeInsets textEdgeInsets;
+@property (nonatomic, assign, readwrite) IBInspectable UIEdgeInsets rightViewInsets;
+@property (nonatomic, assign, readwrite) IBInspectable UIEdgeInsets leftViewInsets;
+@property (nonatomic, assign, readwrite) IBInspectable UIEdgeInsets clearButtonEdgeInsets;
 
 @end
