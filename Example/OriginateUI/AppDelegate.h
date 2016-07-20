@@ -12,5 +12,6 @@
 
 #pragma mark - Properties
 @property (nonatomic, strong, readwrite) UIWindow *window;
+@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end

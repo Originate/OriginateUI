@@ -9,7 +9,7 @@
 #import "CodeViewController.h"
 @import OriginateUI;
 
-@interface CodeViewController ()
+@interface CodeViewController () <UITextViewDelegate>
 
 @end
 

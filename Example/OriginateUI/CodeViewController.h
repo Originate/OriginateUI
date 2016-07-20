@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface CodeViewController : UIViewController <UITextViewDelegate>
+@interface CodeViewController : UIViewController 
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) NSString *myString;

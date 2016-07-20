@@ -105,7 +105,6 @@
     cell.detailTextLabel.text = [self.details objectAtIndex:indexPath.row];
     cell.detailTextLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 12.0];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    [cell setSeparatorsToFullWidth];
     return cell;
 }
 
@@ -167,6 +166,7 @@
         }
             break;
     }
+    [self.table deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
