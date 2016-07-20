@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Hexadecimal Colors";
+    self.title = NSLocalizedString(@"Hexadecimal Colors", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     self.firstValid = YES;
@@ -41,13 +41,13 @@
     
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((self.view.frame.size.width-110),(self.view.frame.size.height-48), 110.0f, 40.0f);
-    [codeButton setTitle:@"Code" forState:UIControlStateNormal];
+    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
 
     UIButton *hexButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     hexButton.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.35), 110.0, 40.0);
-    [hexButton setTitle:@"Go" forState:UIControlStateNormal];
+    [hexButton setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];
     hexButton.titleLabel.font = [UIFont systemFontOfSize:22];
     [hexButton addTarget:self action:@selector(hexButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:hexButton];
@@ -73,8 +73,11 @@
     if (!_mainLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6), (screenWidth*0.9), (screenHeight*0.3))];
-        self.mainLabel.text = @"Most designers work with colors using the hexadecimal system. UIColor by default only really works well with plain RGB values between 0 and 1.";
+        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6),
+                                                                   (screenWidth*0.9), (screenHeight*0.3))];
+        self.mainLabel.text = NSLocalizedString(@"Most designers work with colors using the"
+            "hexadecimal system. UIColor by default only really"
+            "works well with plain RGB values between 0 and 1.", nil);
         self.mainLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.mainLabel.numberOfLines = 0;
     }
@@ -86,8 +89,9 @@
     if (!_hexLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.hexLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.15, (screenWidth*0.75), (30.0))];
-        self.hexLabel.text = @"Hex string";
+        self.hexLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.15,
+                                                                  (screenWidth*0.75), (30.0))];
+        self.hexLabel.text = NSLocalizedString(@"Hex string", nil);
         self.hexLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.hexLabel.numberOfLines = 0;
     }
@@ -99,8 +103,9 @@
     if (!_opacityLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.opacityLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.25), (screenWidth*0.75), 30.0)];
-        self.opacityLabel.text = @"Opacity";
+        self.opacityLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.25),
+                                                                      (screenWidth*0.75), 30.0)];
+        self.opacityLabel.text = NSLocalizedString(@"Opacity", nil);
         self.opacityLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.opacityLabel.numberOfLines = 0;
     }
@@ -183,7 +188,8 @@
     NSScanner *scanner = [NSScanner scannerWithString:hexString];
     [scanner setScanLocation:1];
     [scanner scanHexInt:&rgbValue];
-    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0
+                            blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 - (void)hexButtonPressed

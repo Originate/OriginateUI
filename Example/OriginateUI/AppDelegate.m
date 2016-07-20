@@ -26,7 +26,6 @@
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
         self.window.rootViewController = self.navigationController;
         
-        homeViewController.title = @"OriginateUI";
         [self.navigationController.navigationBar setTitleTextAttributes:
          @{NSForegroundColorAttributeName:[UIColor blackColor],
            NSFontAttributeName:[UIFont fontWithName:@"CircularPro-Medium" size:20.0]}];

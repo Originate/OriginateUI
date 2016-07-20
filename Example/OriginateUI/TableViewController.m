@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Features";
+    self.title = NSLocalizedString(@"Features", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.table];
 }
@@ -63,15 +63,15 @@ typedef enum{
 {
     if (!_details){
         self.details = @[
-                         @"Specifiy insets for text rendering or other elements",
-                         @"For text fields that would benefit from validation.",
-                         @"For text fields that would benefit from validation.",
-                         @"Enables easy access to motion interpolation on views.",
-                         @"Two methods on UIImage to make tinting easier.",
-                         @"Allows use of hexadecimal colors with UIColor.",
-                         @"Easily create circular labeled images.",
-                         @"Install OriginateUI with just a few lines of code.",
-                         @"OriginateUI is available under the MIT license.",];
+                         NSLocalizedString(@"Specifiy insets for text rendering or other elements", nil),
+                         NSLocalizedString(@"For text fields that would benefit from validation.", nil),
+                         NSLocalizedString(@"For text fields that would benefit from validation.", nil),
+                         NSLocalizedString(@"Enables easy access to motion interpolation on views.", nil),
+                         NSLocalizedString(@"Two methods on UIImage to make tinting easier.", nil),
+                         NSLocalizedString(@"Allows use of hexadecimal colors with UIColor.", nil),
+                         NSLocalizedString(@"Easily create circular labeled images.", nil),
+                         NSLocalizedString(@"Install OriginateUI with just a few lines of code.", nil),
+                         NSLocalizedString(@"OriginateUI is available under the MIT license.", nil),];
     }
     return _details;
 }
@@ -79,8 +79,11 @@ typedef enum{
 - (NSArray *)labels
 {
     if (!_labels) {
-        self.labels = @[ @"Text Fields", @"Validating Text Fields", @"Gradient Views", @"Motion Interpolation",
-                         @"Image Tinting", @"Hexadecimal Colors", @"Circle Images", @"Installation", @"Liscense",];
+        self.labels = @[ NSLocalizedString(@"Text Fields",nil), NSLocalizedString(@"Validating Text Fields",nil),
+                         NSLocalizedString(@"Gradient Views",nil), NSLocalizedString(@"Motion Interpolation",nil),
+                         NSLocalizedString(@"Image Tinting",nil), NSLocalizedString(@"Hexadecimal Colors",nil),
+                         NSLocalizedString(@"Circle Images",nil), NSLocalizedString(@"Installation",nil),
+                         NSLocalizedString(@"Liscense",nil),];
     }
     return _labels;
 }

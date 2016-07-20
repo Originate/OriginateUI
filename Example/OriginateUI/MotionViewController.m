@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Motion Interpolation";
+    self.title = NSLocalizedString(@"Motion Interpolation", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
@@ -31,7 +31,7 @@
     
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((screenWidth-110.0),(screenHeight-48.0), 110.0, 40.0);
-    [codeButton setTitle:@"Code" forState:UIControlStateNormal];
+    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
 }
@@ -42,7 +42,7 @@
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.15), (screenWidth*0.8), (screenHeight*0.4))];
-        self.label.text = @"With iOS 7 Apple introduced motion interpolation for views – i.e. you can make your subviews respond to device motion by having the system shift them slightly, thereby creating a parallax-like effect. That said, the API is tedious to use, which is why we extended UIView and introduced a property called motionInterpolationEnabled. It applies a default value and enables x and y axis shifting.";
+        self.label.text = NSLocalizedString( @"With iOS 7 Apple introduced motion interpolation for views – i.e. you can make your subviews respond to device motion by having the system shift them slightly, thereby creating a parallax-like effect. That said, the API is tedious to use, which is why we extended UIView and introduced a property called motionInterpolationEnabled. It applies a default value and enables x and y axis shifting.", nil);
         self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 15];
         self.label.numberOfLines = 0;
     }

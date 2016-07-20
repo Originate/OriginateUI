@@ -23,13 +23,13 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Validating TextFields";
+    self.title = NSLocalizedString(@"Validating TextFields", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
 
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake(screenWidth-100.0,screenHeight-48.0, 110.0, 40.0);
-    [codeButton setTitle:@"Code" forState:UIControlStateNormal];
+    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
     [self.view addSubview:self.label];
@@ -71,9 +71,9 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.35),
                                                                (screenWidth*0.9), (screenHeight*0.3))];
-        self.label.text = @"When implementing registration forms, login masks or other types of"
+        self.label.text = NSLocalizedString(@"When implementing registration forms, login masks or other types of"
         "forms that would benefit from any validation, use Originate Validated Text Field. \n\n Currently"
-        "the validationMode is live, and the Block is length > 5. ";
+                                            "the validationMode is live, and the Block is length > 5. ", nil);
         self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.label.numberOfLines = 0;
     }

@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Gradient Views";
+    self.title = NSLocalizedString(@"Gradient Views", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     self.firstValid = YES;
@@ -44,13 +44,13 @@
 
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((screenWidth-110.0),(screenHeight-48.0), 110.0, 40.0);
-    [codeButton setTitle:@"Code" forState:UIControlStateNormal];
+    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
 
     UIButton *buttonGradient = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     buttonGradient.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.33), 110.0, 40.0);
-    [buttonGradient setTitle:@"Go" forState:UIControlStateNormal];
+    [buttonGradient setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];
     buttonGradient.titleLabel.font = [UIFont systemFontOfSize:22];
     [buttonGradient addTarget:self action:@selector(buttonGradientPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonGradient];
@@ -62,7 +62,7 @@
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.025, (screenHeight*0.55), (screenWidth*0.95), (screenHeight*0.4))];
-        self.mainLabel.text = @"Whilst CoreAnimation provides us with CAGradientLayer it is not as comfortable to use as one would like. For this reason we supply Originate Gradient View. This is also compatible with IBInspectable and IBDesignable. Simply open a view in a xib or storyboard, and set it to Gradient View. There the attributes of the first and second colors can be seen and modified.";
+        self.mainLabel.text = NSLocalizedString(@"Whilst CoreAnimation provides us with CAGradientLayer it is not as comfortable to use as one would like. For this reason we supply Originate Gradient View. This is also compatible with IBInspectable and IBDesignable. Simply open a view in a xib or storyboard, and set it to Gradient View. There the attributes of the first and second colors can be seen and modified.", nil);
         self.mainLabel.font = [self.mainLabel.font fontWithSize:16];
         self.mainLabel.numberOfLines = 0;
     }
@@ -75,7 +75,7 @@
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.labelFirstColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.15, (screenWidth*0.75), (30.0))];
-        self.labelFirstColor.text = @"First color";
+        self.labelFirstColor.text = NSLocalizedString(@"First color", nil);
         self.labelFirstColor.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.labelFirstColor.numberOfLines = 0;
     }
@@ -88,7 +88,7 @@
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.labelSecondColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.25), (screenWidth*0.75), 30.0)];
-        self.labelSecondColor.text = @"Second color";
+        self.labelSecondColor.text = NSLocalizedString(@"Second color", nil);
         self.labelSecondColor.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.labelSecondColor.numberOfLines = 0;
     }

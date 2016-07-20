@@ -25,25 +25,28 @@
     self.view.backgroundColor = [UIColor whiteColor];
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-    self.title = @"Circle Images";
+    self.title = NSLocalizedString(@"Circle Images", nil);
     
     UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-50,screenHeight*0.35, 100, 100)];
     CGSize mySize = CGSizeMake(50, 50);
-    UIImage *firstImage = [UIImage circularImageWithText:@"S.R" textColor:[UIColor blueColor] backgroundColor:[UIColor hex:0xFF2D55] size:mySize];
+    UIImage *firstImage = [UIImage circularImageWithText:@"S.R" textColor:[UIColor blueColor]
+                                         backgroundColor:[UIColor hex:0xFF2D55] size:mySize];
     imageView.image = firstImage;
     [self.view addSubview:imageView];
     [self.view addSubview:self.mainLabel];
     [self.view addSubview:self.secondLabel];
     
     mySize = CGSizeMake(75, 75);
-    UIImageView *secondImageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-60,screenHeight*0.7, 120, 120)];
-    UIImage *secondImage = [UIImage circularImageWithText:@"O.K" textColor:[UIColor hex:0xFFFFFF] backgroundColor:[UIColor hex:0xC86EDF] size:mySize];
+    UIImageView *secondImageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-60,
+                                                                                screenHeight*0.7, 120, 120)];
+    UIImage *secondImage = [UIImage circularImageWithText:@"O.K" textColor:[UIColor hex:0xFFFFFF]
+                                          backgroundColor:[UIColor hex:0xC86EDF] size:mySize];
     secondImageView.image = secondImage;
     [self.view addSubview:secondImageView];
     
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((self.view.frame.size.width-110),(self.view.frame.size.height-48), 110.0f, 40.0f);
-    [codeButton setTitle:@"Code" forState:UIControlStateNormal];
+    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
 }
@@ -53,8 +56,10 @@
     if (!_mainLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.1), (screenWidth*0.9), (screenHeight*0.3))];
-        self.mainLabel.text = @"Originate UI makes it easy to make circular images with text, for uses such as labels, icons, etc.";
+        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.1),
+                                                                   (screenWidth*0.9), (screenHeight*0.3))];
+        self.mainLabel.text = NSLocalizedString(@"Originate UI makes it easy to make circular images with text,"
+                                                "for uses such as labels, icons, etc.", nil);
         self.mainLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.mainLabel.numberOfLines = 0;
     }
@@ -66,8 +71,10 @@
     if (!_secondLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.45), (screenWidth*0.9), (screenHeight*0.3))];
-        self.secondLabel.text = @"It is simple and fast to set the radius, the text, and the color of the circle and the text. All it takes is a few lines of code.";
+        self.secondLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.45),
+                                                                     (screenWidth*0.9), (screenHeight*0.3))];
+        self.secondLabel.text = NSLocalizedString(@"It is simple and fast to set the radius, the text, and the color"
+                                                  "of the circle and the text. All it takes is a few lines of code.", nil);
         self.secondLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.secondLabel.numberOfLines = 0;
     }
@@ -78,7 +85,8 @@
 {
     NSString *codeText = @"   UIImageView *imageView =[[UIImageView alloc] initWithFrame:testRect;"
     "CGSize mySize = CGSizeMake(50, 50);"
-    "UIImage *circle = [UIImage circularImageWithText:@\"Example\" textColor:[UIColor hex:0x2B2B2B] backgroundColor:[UIColor hex:0xFF2D55] size:"
+    "UIImage *circle = [UIImage circularImageWithText:@\"Example\" textColor:[UIColor hex:0x2B2B2B]"
+    "backgroundColor:[UIColor hex:0xFF2D55] size:"
     "mySize];"
     "imageView.image = circle;"
     "[self.view addSubview:imageView];";

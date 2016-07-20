@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Image Tinting";
+    self.title = NSLocalizedString(@"Image Tinting", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     self.firstValid = YES;
@@ -43,14 +43,14 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(screenWidth-110.0,screenHeight-48.0, 110.0, 40.0);
-    [button setTitle:@"Code" forState:UIControlStateNormal];
+    [button setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 
     UIButton *vButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     vButton.frame = CGRectMake((screenWidth*0.5-55.0), screenHeight*0.55, 110.0, 50.0);
     vButton.titleLabel.font = [UIFont systemFontOfSize:22];
-    [vButton setTitle:@"Tint" forState:UIControlStateNormal];
+    [vButton setTitle:NSLocalizedString(@"Tint", nil) forState:UIControlStateNormal];
     [vButton addTarget:self action:@selector(tintButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:vButton];
     
@@ -61,8 +61,10 @@
     if (!_mainLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6), (screenWidth*0.9), (screenHeight*0.3))];
-        self.mainLabel.text = @"To make the tinting of images easier, we provide two methods on UIImage. You can also easily modify the opacity. ";
+        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.6),
+                                                                   (screenWidth*0.9), (screenHeight*0.3))];
+        self.mainLabel.text = NSLocalizedString(@"To make the tinting of images easier, we provide two methods"
+                                                "on UIImage. You can also easily modify the opacity. ", nil);
         self.mainLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.mainLabel.numberOfLines = 0;
     }
@@ -74,8 +76,9 @@
     if (!_labelFirstColor){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.labelFirstColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.35, (screenWidth*0.75), (30.0))];
-        self.labelFirstColor.text = @"Tint color";
+        self.labelFirstColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.35,
+                                                                         (screenWidth*0.75), (30.0))];
+        self.labelFirstColor.text = NSLocalizedString(@"Tint color", nil);
         self.labelFirstColor.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.labelFirstColor.numberOfLines = 0;
     }
@@ -87,8 +90,9 @@
     if (!_labelSecondColor){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.labelSecondColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.45), (screenWidth*0.75), 30.0)];
-        self.labelSecondColor.text = @"Opacity";
+        self.labelSecondColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.45),
+                                                                          (screenWidth*0.75), 30.0)];
+        self.labelSecondColor.text = NSLocalizedString(@"Opacity", nil);
         self.labelSecondColor.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.labelSecondColor.numberOfLines = 0;
     }
@@ -108,7 +112,9 @@
         self.textFieldFirst.borderStyle = UITextBorderStyleRoundedRect;
         self.textFieldFirst.validationMode = OriginateTextFieldValidationModeLive;
         self.textFieldFirst.validationBlock = ^BOOL(NSString *text) {
-            NSArray *allColors = @[ @"blueColor", @"redColor", @"greenColor", @"blackColor", @"whiteColor", @"orangeColor", @"brownColor", @"purpleColor", @"yellowColor", @"grayColor", @"magentaColor", @"cyanColor", @"lightGrayColor", @"darkGrayColor", @"clearColor"];
+            NSArray *allColors = @[ @"blueColor", @"redColor", @"greenColor", @"blackColor", @"whiteColor",
+                                    @"orangeColor", @"brownColor", @"purpleColor", @"yellowColor", @"grayColor",
+                                    @"magentaColor", @"cyanColor", @"lightGrayColor", @"darkGrayColor", @"clearColor"];
             BOOL colorCheck = [allColors containsObject: text];
             return (colorCheck);
         };
@@ -168,7 +174,8 @@
     if (!_imageView){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.imageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-150.0,screenHeight*0.2, 300.0, 84.3)];
+        self.imageView =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.5-150.0,
+                                                                      screenHeight*0.2, 300.0, 84.3)];
         UIImage *logo = [UIImage imageNamed:@"Originate.png"];
         UIImage *blueLogo = [logo imageTintedWithColor:[UIColor blueColor]];
         self.imageView.image = blueLogo;
