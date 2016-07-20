@@ -9,7 +9,7 @@
 @import UIKit;
 @import OriginateUI;
 
-@interface HexadecimalViewController : UIViewController <UITextFieldDelegate>
+@interface HexadecimalViewController : UIViewController
 
 - (UIColor *)colorFromHexString:(NSString *)hexString;
 

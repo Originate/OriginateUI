@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 @import OriginateUI;
 
-@interface GradientViewController ()
+@interface GradientViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *mainLabel;
 @property (nonatomic, strong) UILabel *labelFirstColor;
@@ -180,10 +180,10 @@
 
 - (void)codeButtonPressed
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"UIColor *topColor = [UIColor whiteColor];\n"
+    NSString *codeText = @"UIColor *topColor = [UIColor whiteColor];\n"
     "UIColor *blackColor = [UIColor blackColor];\n"
     "OriginateGradientView *view = [[OriginateGradientView alloc] initWithFirstColor:topColor secondColor:blackColor];\n";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 

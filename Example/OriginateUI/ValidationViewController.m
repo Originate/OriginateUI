@@ -10,7 +10,7 @@
 #import "CodeViewController.h"
 @import OriginateUI;
 
-@interface ValidationViewController ()
+@interface ValidationViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) OriginateValidatedTextField *textField;
 @property (nonatomic, strong) UILabel *label;
@@ -69,8 +69,11 @@
     if (!_label){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.35), (screenWidth*0.9), (screenHeight*0.3))];
-        self.label.text = @"When implementing registration forms, login masks or other types of forms that would benefit from any validation, use Originate Validated Text Field. \n\n Currently the validationMode is live, and the Block is length > 5. ";
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.35),
+                                                               (screenWidth*0.9), (screenHeight*0.3))];
+        self.label.text = @"When implementing registration forms, login masks or other types of"
+        "forms that would benefit from any validation, use Originate Validated Text Field. \n\n Currently"
+        "the validationMode is live, and the Block is length > 5. ";
         self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.label.numberOfLines = 0;
     }
@@ -85,8 +88,7 @@
     
 - (void)codeButtonPressed
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"OriginateValidatedTextField * textField = [[OriginateValidatedTextField alloc] init];\n"
+    NSString *codeText = @"OriginateValidatedTextField * textField = [[OriginateValidatedTextField alloc] init];\n"
     "textField.validationMode = OriginateTextFieldValidationModeLive;\n"
     "textField.validationBlock = ^BOOL(NSString *text) {\n"
      "   return ([text length] > 5);\n"
@@ -99,6 +101,7 @@
      "       textField.backgroundColor = [UIColor redColor];\n"
     "    }\n"
     "};\n";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 

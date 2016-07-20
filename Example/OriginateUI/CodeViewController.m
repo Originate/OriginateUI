@@ -11,6 +11,9 @@
 
 @interface CodeViewController () <UITextViewDelegate>
 
+@property (nonatomic, strong) NSString *myString;
+@property (nonatomic, strong) UITextView *textView;
+
 @end
 
 @implementation CodeViewController
@@ -18,16 +21,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, (self.view.frame.size.height*0.25f), (self.view.frame.size.width-10.0f), (self.view.frame.size.height*0.15f))];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.textView.delegate = self;
-    [self.textView setBackgroundColor: [UIColor hex:0xfaebd7]];
-    self.textView.text = self.myString;
-    self.textView.editable = NO;
-    [self.view addSubview:_textView];
+
+    [self.view addSubview:self.textView];
+}
+
+- (UITextView *)textView
+{
+    if (!_textView) {
+        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, (self.view.frame.size.height*0.25),
+                        (self.view.frame.size.width-10.0), (self.view.frame.size.height*0.3))];
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        self.textView.delegate = self;
+        [self.textView setBackgroundColor: [UIColor hex:0xfaebd7]];
+        self.textView.text = self.myString;
+        self.textView.editable = NO;
+    }
+    return _textView;
 }
 
 
+- (instancetype)initWithText:(NSString *)text
+{
+    self = [super init];
+    if (self) {
+        self.myString = text;
+    }
+    return self;
+}
 
 @end

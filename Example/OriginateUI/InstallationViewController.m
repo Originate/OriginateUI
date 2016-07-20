@@ -10,7 +10,7 @@
 #import "CodeViewController.h"
 @import OriginateUI;
 
-@interface InstallationViewController ()
+@interface InstallationViewController () <UITextViewDelegate>
 
 @property (nonatomic, strong) UILabel *instLabel;
 @property (nonatomic, strong) UILabel *reqLabel;

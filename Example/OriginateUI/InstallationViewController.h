@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface InstallationViewController : UIViewController <UITextViewDelegate>
+@interface InstallationViewController : UIViewController
 
 @end

@@ -10,7 +10,7 @@
 #import "CodeViewController.h"
 @import OriginateUI;
 
-@interface TintingViewController ()
+@interface TintingViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *mainLabel;
@@ -190,9 +190,9 @@
 
 - (void)buttonPressed
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"UIImage *logo = [UIImage imageNamed:@\"logo\"];\n"
+    NSString *codeText = @"UIImage *logo = [UIImage imageNamed:@\"logo\"];\n"
     "UIImage *blackLogo = [logo imageTintedWithColor:[UIColor blackColor]];";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 
@@ -201,6 +201,5 @@
     [textField resignFirstResponder];
     return NO;
 }
-
 
 @end

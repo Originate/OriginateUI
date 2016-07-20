@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface TintingViewController : UIViewController <UITextFieldDelegate>
+@interface TintingViewController : UIViewController 
 
 @end

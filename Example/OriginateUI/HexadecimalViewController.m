@@ -9,7 +9,7 @@
 #import "HexadecimalViewController.h"
 #import "CodeViewController.h"
 
-@interface HexadecimalViewController ()
+@interface HexadecimalViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UIView *hexView;
 @property (nonatomic, strong) UILabel *mainLabel;
@@ -200,11 +200,12 @@
 
 - (void)codeButton
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"// Red\n"
+
+    NSString *codeText = @"// Red\n"
     "UIColor *redColor = [UIColor hex:0xFF0000];\n"
    " // Green at 50% Opacity\n"
     "UIColor *redColor = [UIColor hex:0x00FF00 alpha:0.5];";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 

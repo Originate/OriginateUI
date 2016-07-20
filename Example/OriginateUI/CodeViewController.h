@@ -8,9 +8,8 @@
 
 @import UIKit;
 
-@interface CodeViewController : UIViewController 
+@interface CodeViewController : UIViewController
 
-@property (nonatomic, strong) UITextView *textView;
-@property (nonatomic, strong) NSString *myString;
+- (instancetype)initWithText:(NSString *)text;
 
 @end

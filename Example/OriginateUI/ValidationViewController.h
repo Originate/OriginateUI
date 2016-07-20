@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface ValidationViewController : UIViewController <UITextFieldDelegate>
+@interface ValidationViewController : UIViewController
 
 @end

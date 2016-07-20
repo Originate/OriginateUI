@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface GradientViewController : UIViewController <UITextFieldDelegate>
+@interface GradientViewController : UIViewController
 
 @end

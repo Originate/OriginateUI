@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface TextFieldViewController : UIViewController  <UITextFieldDelegate>
+@interface TextFieldViewController : UIViewController
 
 @end

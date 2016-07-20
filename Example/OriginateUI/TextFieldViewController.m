@@ -10,7 +10,7 @@
 #import "CodeViewController.h"
 @import OriginateUI;
 
-@interface TextFieldViewController ()
+@interface TextFieldViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) OriginateValidatedTextField *textField;
@@ -101,9 +101,9 @@
 
 - (void)codeButtonPressed
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"OriginateTextField *textField = [[OriginateTextField alloc] init];\n"
+    NSString *codeText = @"OriginateTextField *textField = [[OriginateTextField alloc] init];\n"
     "textField.textEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 

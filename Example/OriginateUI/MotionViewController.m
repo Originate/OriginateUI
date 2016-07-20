@@ -66,9 +66,9 @@
 
 - (void)codeButtonPressed
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@\"logo\"]];\n"
+    NSString *codeText = @"UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@\"logo\"]];\n"
     "view.motionInterpolationEnabled = YES;";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 

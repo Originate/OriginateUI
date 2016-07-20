@@ -76,13 +76,13 @@
 
 - (void)codeButton
 {
-    CodeViewController *codeView = [[CodeViewController alloc] init];
-    codeView.myString = @"   UIImageView *imageView =[[UIImageView alloc] initWithFrame:testRect;"
+    NSString *codeText = @"   UIImageView *imageView =[[UIImageView alloc] initWithFrame:testRect;"
     "CGSize mySize = CGSizeMake(50, 50);"
     "UIImage *circle = [UIImage circularImageWithText:@\"Example\" textColor:[UIColor hex:0x2B2B2B] backgroundColor:[UIColor hex:0xFF2D55] size:"
     "mySize];"
     "imageView.image = circle;"
     "[self.view addSubview:imageView];";
+    CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }
 
