@@ -36,6 +36,18 @@
     [self.view addSubview:self.table];
 }
 
+typedef enum{
+    TextFields = 0,
+    Validation = 1,
+    Gradient = 2,
+    Motion = 3,
+    Tinting = 4,
+    Hexadecimal = 5,
+    Circle = 6,
+    Installation = 7,
+    Liscense = 8
+} IndexRow;
+
 - (UITableView *)table
 {
     if (!_table){
@@ -111,55 +123,55 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-        case 0:
+        case TextFields:
         {
             TextFieldViewController *textFieldViewController =  [[TextFieldViewController alloc] init];
             [self.navigationController pushViewController:textFieldViewController animated:YES];
         }
             break;
-        case 1:
+        case Validation:
         {
             ValidationViewController *validationViewController =  [[ValidationViewController alloc] init];
             [self.navigationController pushViewController:validationViewController animated:YES];
         }
             break;
-        case 2:
+        case Gradient:
         {
             GradientViewController *gradientViewController =  [[GradientViewController alloc] init];
             [self.navigationController pushViewController:gradientViewController animated:YES];
         }
             break;
-        case 3:
+        case Motion:
         {
             MotionViewController *motionViewController =  [[MotionViewController alloc] init];
             [self.navigationController pushViewController:motionViewController animated:YES];
         }
             break;
-        case 4:
+        case Tinting:
         {
             TintingViewController *tintingViewController =  [[TintingViewController alloc] init];
             [self.navigationController pushViewController:tintingViewController animated:YES];
         }
             break;
-        case 5:
+        case Hexadecimal:
         {
             HexadecimalViewController *hexadecimalViewController =  [[HexadecimalViewController alloc] init];
             [self.navigationController pushViewController:hexadecimalViewController animated:YES];
         }
             break;
-        case 6:
+        case Circle:
         {
             CircleViewController *circleViewController =  [[CircleViewController alloc] init];
             [self.navigationController pushViewController:circleViewController animated:YES];
         }
             break;
-        case 7:
+        case Installation:
         {
             InstallationViewController *installationViewController =  [[InstallationViewController alloc] init];
             [self.navigationController pushViewController:installationViewController animated:YES];
         }
             break;
-        case 8:
+        case Liscense:
         {
             LiscenseViewController *liscenseViewController =  [[LiscenseViewController alloc] init];
             [self.navigationController pushViewController:liscenseViewController animated:YES];
