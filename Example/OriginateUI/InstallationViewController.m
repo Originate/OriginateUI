@@ -140,7 +140,7 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.textViewFirst = [[UITextView alloc] initWithFrame:CGRectMake(40.0, (screenHeight*0.35), (screenWidth-80.0), (screenHeight*0.075))];
         self.automaticallyAdjustsScrollViewInsets = NO;
-        [self.textViewFirst setReturnKeyType:UIReturnKeyDone];
+        self.textViewFirst.editable = NO;
         [self.textViewFirst setBackgroundColor: [UIColor hex:0xfaebd7]];
         self.textViewFirst.delegate = self;
         self.textViewFirst.text = @"source 'https://github.com/Originate/CocoaPods.git'"
@@ -155,7 +155,7 @@
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (screenHeight*.75), (screenWidth-80.0), (screenHeight*0.075))];
-        [self.textViewSecond setReturnKeyType:UIReturnKeyDone];
+        self.textViewSecond.editable = NO;
         [self.textViewSecond setBackgroundColor: [UIColor hex:0xfaebd7]];
         self.textViewSecond.delegate = self;
         self.automaticallyAdjustsScrollViewInsets = NO;

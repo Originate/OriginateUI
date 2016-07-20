@@ -23,20 +23,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.textView.delegate = self;
     [self.textView setBackgroundColor: [UIColor hex:0xfaebd7]];
-    [self.textView setReturnKeyType:UIReturnKeyDone];
     self.textView.text = self.myString;
+    self.textView.editable = NO;
     [self.view addSubview:_textView];
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    if (range.length==0) {
-        if ([text isEqualToString:@"\n"]) {
-            [textView resignFirstResponder];
-            return NO;
-        }
-    }
-    return YES;
-}
+
 
 @end
