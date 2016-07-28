@@ -11,7 +11,7 @@
 
 @interface CodeViewController () <UITextViewDelegate>
 
-@property (nonatomic, strong) NSString *myString;
+@property (nonatomic, strong) NSString *codeText;
 @property (nonatomic, strong) UITextView *textView;
 
 @end
@@ -21,7 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
+- (void)loadView
+{
+    [super loadView];
     [self.view addSubview:self.textView];
 }
 
@@ -34,7 +38,7 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
         self.textView.delegate = self;
         [self.textView setBackgroundColor: [UIColor hex:0xfaebd7]];
-        self.textView.text = self.myString;
+        self.textView.text = self.codeText;
         self.textView.editable = NO;
     }
     return _textView;
@@ -45,7 +49,7 @@
 {
     self = [super init];
     if (self) {
-        self.myString = text;
+        _codeText = text;
     }
     return self;
 }

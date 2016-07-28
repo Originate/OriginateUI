@@ -28,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Image Tinting", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
@@ -46,14 +51,13 @@
     [button setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
-
+    
     UIButton *vButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     vButton.frame = CGRectMake((screenWidth*0.5-55.0), screenHeight*0.55, 110.0, 50.0);
     vButton.titleLabel.font = [UIFont systemFontOfSize:22];
     [vButton setTitle:NSLocalizedString(@"Tint", nil) forState:UIControlStateNormal];
     [vButton addTarget:self action:@selector(tintButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:vButton];
-    
 }
 
 - (UILabel *)mainLabel

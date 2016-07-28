@@ -15,9 +15,9 @@
 @property (nonatomic, strong) UILabel *instLabel;
 @property (nonatomic, strong) UILabel *reqLabel;
 @property (nonatomic, strong) UILabel *useLabel;
-@property (nonatomic, strong) UILabel *instLabel2;
-@property (nonatomic, strong) UILabel *reqLabel2;
-@property (nonatomic, strong) UILabel *useLabel2;
+@property (nonatomic, strong) UILabel *instSubLabel;
+@property (nonatomic, strong) UILabel *reqSubLabel;
+@property (nonatomic, strong) UILabel *useSubLabel;
 @property (nonatomic, strong) UILabel *endLabel;
 @property (nonatomic, strong) UITextView *textViewFirst;
 @property (nonatomic, strong) UITextView *textViewSecond;
@@ -29,14 +29,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Installation", nil);
     [self.view addSubview:self.instLabel];
     [self.view addSubview:self.reqLabel];
     [self.view addSubview:self.useLabel];
-    [self.view addSubview:self.instLabel2];
-    [self.view addSubview:self.reqLabel2];
-    [self.view addSubview:self.useLabel2];
+    [self.view addSubview:self.instSubLabel];
+    [self.view addSubview:self.reqSubLabel];
+    [self.view addSubview:self.useSubLabel];
     [self.view addSubview:self.endLabel];
     [self.view addSubview:self.textViewFirst];
     [self.view addSubview:self.textViewSecond];
@@ -81,43 +86,44 @@
     return _useLabel;
 }
 
-- (UILabel *)instLabel2
+- (UILabel *)instSubLabel
 {
-    if (!_instLabel2){
+    if (!_instSubLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.instLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.25, screenWidth*0.8, 50.0)];
-        self.instLabel2.text = NSLocalizedString(@"Add the following lines to your Podfile and run pod install.", nil);
-        self.instLabel2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-        self.instLabel2.numberOfLines = 0;
+        self.instSubLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.25, screenWidth*0.8, 50.0)];
+        self.instSubLabel.text = NSLocalizedString(@"Add the following lines to your Podfile and run pod install.", nil);
+        self.instSubLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.instSubLabel.numberOfLines = 0;
     }
-    return _instLabel2;
+    return _instSubLabel;
 }
 
-- (UILabel *)reqLabel2
+- (UILabel *)reqSubLabel
 {
-    if (!_reqLabel2){
+    if (!_reqSubLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.reqLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.5, screenWidth*0.8, 50.0)];
-        self.reqLabel2.text = NSLocalizedString(@"iOS 8.0+", nil);
-        self.reqLabel2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-        self.reqLabel2.numberOfLines = 0;
+        self.reqSubLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.5, screenWidth*0.8, 50.0)];
+        self.reqSubLabel.text = NSLocalizedString(@"iOS 8.0+", nil);
+        self.reqSubLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.reqSubLabel.numberOfLines = 0;
     }
-    return _reqLabel2;
+    return _reqSubLabel;
 }
 
-- (UILabel *)useLabel2
+- (UILabel *)useSubLabel
 {
-    if (!_useLabel2){
+    if (!_useSubLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.useLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.65, screenWidth*0.8, 50.0)];
-        self.useLabel2.text = NSLocalizedString(@"Add the following line wherever you want to access the framework:", nil);
-        self.useLabel2.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
-        self.useLabel2.numberOfLines = 0;
+        self.useSubLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, screenHeight*0.65, screenWidth*0.8, 50.0)];
+        self.useSubLabel.text = NSLocalizedString(@"Add the following line wherever you want"
+                                                "to access the framework:", nil);
+        self.useSubLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 14];
+        self.useSubLabel.numberOfLines = 0;
     }
-    return _useLabel2;
+    return _useSubLabel;
 }
 
 - (UILabel *)endLabel
@@ -139,7 +145,8 @@
     if (!_textViewFirst){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.textViewFirst = [[UITextView alloc] initWithFrame:CGRectMake(40.0, (screenHeight*0.35), (screenWidth-80.0), (screenHeight*0.075))];
+        self.textViewFirst = [[UITextView alloc] initWithFrame:CGRectMake(40.0, (screenHeight*0.35),
+                                                                          (screenWidth-80.0), (screenHeight*0.075))];
         self.automaticallyAdjustsScrollViewInsets = NO;
         self.textViewFirst.editable = NO;
         [self.textViewFirst setBackgroundColor: [UIColor hex:0xfaebd7]];
@@ -155,7 +162,8 @@
     if (!_textViewSecond){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (screenHeight*.75), (screenWidth-80.0), (screenHeight*0.075))];
+        self.textViewSecond = [[UITextView alloc] initWithFrame:CGRectMake(40, (screenHeight*.75),
+                                                                           (screenWidth-80.0), (screenHeight*0.075))];
         self.textViewSecond.editable = NO;
         [self.textViewSecond setBackgroundColor: [UIColor hex:0xfaebd7]];
         self.textViewSecond.delegate = self;

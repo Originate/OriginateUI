@@ -11,7 +11,7 @@
 
 @interface LiscenseViewController ()
 
-@property (nonatomic, strong) NSString *myString;
+@property (nonatomic, strong) NSString *bodyText;
 @property (nonatomic, strong) UILabel *label;
 
 @end
@@ -21,6 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Liscense", nil);
     [self setString];
@@ -34,7 +39,7 @@
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.125, (screenHeight*0.125),
                                                                (screenWidth*0.75), (screenHeight*0.875))];
-        self.label.text = self.myString;
+        self.label.text = self.bodyText;
         self.label.font = [self.label.font fontWithSize:12];
         self.label.numberOfLines = 0;
     }
@@ -43,7 +48,7 @@
 
 -(void)setString
 {
-    self.myString = NSLocalizedString(@"Copyright (c) 2015 Originate\n\n"
+    self.bodyText = NSLocalizedString(@"Copyright (c) 2015 Originate\n\n"
     "Permission is hereby granted, free of charge, to any person obtaining a copy"
     "of this software and associated documentation files (the \"Software\"), to deal"
     "in the Software without restriction, including without limitation the rights"

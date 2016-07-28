@@ -22,6 +22,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.title = NSLocalizedString(@"Motion Interpolation", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
@@ -41,8 +46,14 @@
     if (!_label){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.15), (screenWidth*0.8), (screenHeight*0.4))];
-        self.label.text = NSLocalizedString( @"With iOS 7 Apple introduced motion interpolation for views – i.e. you can make your subviews respond to device motion by having the system shift them slightly, thereby creating a parallax-like effect. That said, the API is tedious to use, which is why we extended UIView and introduced a property called motionInterpolationEnabled. It applies a default value and enables x and y axis shifting.", nil);
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.15),
+                                                               (screenWidth*0.8), (screenHeight*0.4))];
+        self.label.text = NSLocalizedString( @"With iOS 7 Apple introduced motion interpolation for views – i.e. you"
+                                            "can make your subviews respond to device motion by having the system shift"
+                                            "them slightly, thereby creating a parallax-like effect. That said, the API"
+                                            "is tedious to use, which is why we extended UIView and introduced a "
+                                            "property called motionInterpolationEnabled. It applies a default value "
+                                            "and enables x and y axis shifting.", nil);
         self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 15];
         self.label.numberOfLines = 0;
     }
@@ -54,7 +65,8 @@
     if (!_gradientView){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.gradientView = [[OriginateGradientView alloc] initWithFrame:CGRectMake(screenWidth*0.25, screenHeight*0.6, screenWidth*0.5, screenWidth*0.5)];
+        self.gradientView = [[OriginateGradientView alloc] initWithFrame:CGRectMake(screenWidth*0.25, screenHeight*0.6,
+                                                                                    screenWidth*0.5, screenWidth*0.5)];
         self.gradientView.firstColor = [UIColor hex:0xFF5E3A];
         self.gradientView.secondColor = [UIColor hex:0xFF2A68];
         self.gradientView.motionInterpolationEnabled = YES;

@@ -29,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Gradient Views", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
@@ -41,28 +46,35 @@
     [self.view addSubview:self.textFieldFirst];
     [self.view addSubview:self.textFieldSecond];
     [self.view addSubview:self.gradientView];
-
+    
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((screenWidth-110.0),(screenHeight-48.0), 110.0, 40.0);
     [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
-
+    
     UIButton *buttonGradient = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     buttonGradient.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.33), 110.0, 40.0);
     [buttonGradient setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];
     buttonGradient.titleLabel.font = [UIFont systemFontOfSize:22];
-    [buttonGradient addTarget:self action:@selector(buttonGradientPressed) forControlEvents:UIControlEventTouchUpInside];
+    [buttonGradient addTarget:self action:@selector(buttonGradientPressed)
+             forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonGradient];
 }
+
 
 - (UILabel *)mainLabel
 {
     if (!_mainLabel){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.025, (screenHeight*0.55), (screenWidth*0.95), (screenHeight*0.4))];
-        self.mainLabel.text = NSLocalizedString(@"Whilst CoreAnimation provides us with CAGradientLayer it is not as comfortable to use as one would like. For this reason we supply Originate Gradient View. This is also compatible with IBInspectable and IBDesignable. Simply open a view in a xib or storyboard, and set it to Gradient View. There the attributes of the first and second colors can be seen and modified.", nil);
+        self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.025,
+                        (screenHeight*0.55), (screenWidth*0.95), (screenHeight*0.4))];
+        self.mainLabel.text = NSLocalizedString(@"Whilst CoreAnimation provides us with CAGradientLayer"
+                    "it is not as comfortable to use as one would like. For this reason we supply Originate"
+                    "Gradient View. This is also compatible with IBInspectable and IBDesignable. Simply open a"
+                    "view in a xib or storyboard, and set it to Gradient View. There the attributes of the first"
+                    "and second colors can be seen and modified.", nil);
         self.mainLabel.font = [self.mainLabel.font fontWithSize:16];
         self.mainLabel.numberOfLines = 0;
     }
@@ -74,7 +86,8 @@
     if (!_labelFirstColor){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.labelFirstColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, screenHeight*0.15, (screenWidth*0.75), (30.0))];
+        self.labelFirstColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1,
+                                screenHeight*0.15, (screenWidth*0.75), (30.0))];
         self.labelFirstColor.text = NSLocalizedString(@"First color", nil);
         self.labelFirstColor.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.labelFirstColor.numberOfLines = 0;
@@ -87,7 +100,8 @@
     if (!_labelSecondColor){
         CGFloat screenHeight = CGRectGetHeight(self.view.frame);
         CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.labelSecondColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1, (screenHeight*0.25), (screenWidth*0.75), 30.0)];
+        self.labelSecondColor = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.1,
+                                    (screenHeight*0.25), (screenWidth*0.75), 30.0)];
         self.labelSecondColor.text = NSLocalizedString(@"Second color", nil);
         self.labelSecondColor.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
         self.labelSecondColor.numberOfLines = 0;
@@ -109,7 +123,10 @@
         self.textFieldFirst.validationMode = OriginateTextFieldValidationModeLive;
         self.textFieldFirst.validationBlock = ^BOOL(NSString *text) {
             NSString *topText = text;
-            NSArray *allColors = @[ @"blueColor", @"redColor", @"greenColor", @"blackColor", @"whiteColor", @"orangeColor", @"brownColor", @"purpleColor", @"yellowColor", @"grayColor", @"magentaColor", @"cyanColor", @"lightGrayColor", @"darkGrayColor", @"clearColor"];
+            NSArray *allColors = @[ @"blueColor", @"redColor", @"greenColor", @"blackColor",
+                                    @"whiteColor", @"orangeColor", @"brownColor", @"purpleColor",
+                                    @"yellowColor", @"grayColor", @"magentaColor", @"cyanColor",
+                                    @"lightGrayColor", @"darkGrayColor", @"clearColor"];
             BOOL firstCheck = [allColors containsObject: topText];
             return (firstCheck);
         };
@@ -143,7 +160,10 @@
         self.textFieldSecond.validationMode = OriginateTextFieldValidationModeLive;
         self.textFieldSecond.validationBlock = ^BOOL(NSString *text) {
             NSString *bottomText = text;
-            NSArray *allColors = @[ @"blueColor", @"redColor", @"greenColor", @"blackColor", @"whiteColor", @"orangeColor", @"brownColor", @"purpleColor", @"yellowColor", @"grayColor", @"magentaColor", @"cyanColor", @"lightGrayColor", @"darkGrayColor", @"clearColor"];
+            NSArray *allColors = @[ @"blueColor", @"redColor", @"greenColor", @"blackColor",
+                                    @"whiteColor", @"orangeColor", @"brownColor", @"purpleColor",
+                                    @"yellowColor", @"grayColor", @"magentaColor", @"cyanColor",
+                                    @"lightGrayColor", @"darkGrayColor", @"clearColor"];
             BOOL secondCheck = [allColors containsObject: bottomText];
             return (secondCheck);
         };
@@ -181,8 +201,9 @@
 - (void)codeButtonPressed
 {
     NSString *codeText = @"UIColor *topColor = [UIColor whiteColor];\n"
-    "UIColor *blackColor = [UIColor blackColor];\n"
-    "OriginateGradientView *view = [[OriginateGradientView alloc] initWithFirstColor:topColor secondColor:blackColor];\n";
+        "UIColor *blackColor = [UIColor blackColor];\n"
+        "OriginateGradientView *view = [[OriginateGradientView alloc]"
+        "initWithFirstColor:topColor secondColor:blackColor];\n";
     CodeViewController *codeView = [[CodeViewController alloc] initWithText:codeText];
     [self.navigationController pushViewController:codeView animated:YES];
 }

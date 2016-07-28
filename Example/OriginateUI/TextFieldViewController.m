@@ -23,19 +23,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Text Fields", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     [self.view addSubview:self.textField];
     [self.view addSubview:self.label];
-
+    
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake((screenWidth-110.0),(screenHeight-48.0), 110.0, 40.0);
     [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
-
+    
     UIButton *insetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     insetButton.frame = CGRectMake((screenWidth*0.7),(screenHeight*0.575), 110.0, 40.0);
     [insetButton setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];

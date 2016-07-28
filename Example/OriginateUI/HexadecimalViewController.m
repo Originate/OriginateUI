@@ -27,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Hexadecimal Colors", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
@@ -44,7 +49,7 @@
     [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
     [codeButton addTarget:self action:@selector(codeButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:codeButton];
-
+    
     UIButton *hexButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     hexButton.frame = CGRectMake((screenWidth*0.5-55.0),(screenHeight*0.35), 110.0, 40.0);
     [hexButton setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];

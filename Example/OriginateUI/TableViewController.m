@@ -31,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.title = NSLocalizedString(@"Features", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.table];
@@ -98,7 +103,8 @@ typedef enum{
     return self.labels.count;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.backgroundColor = [UIColor whiteColor];
 }

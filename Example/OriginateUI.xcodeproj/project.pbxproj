@@ -125,110 +125,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5D0383631D2EC3A800425BE3 /* Circle */ = {
-			isa = PBXGroup;
-			children = (
-				5D0383601D2EBB4700425BE3 /* CircleViewController.h */,
-				5D0383611D2EBB4700425BE3 /* CircleViewController.m */,
-			);
-			name = Circle;
-			sourceTree = "<group>";
-		};
-		5D1DDB201D1B03F30007A160 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB0B1D1B03920007A160 /* ValidationViewController.h */,
-				5D1DDB0C1D1B03920007A160 /* ValidationViewController.m */,
-			);
-			name = Validation;
-			sourceTree = "<group>";
-		};
-		5D1DDB211D1B03FB0007A160 /* Gradient */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB0E1D1B039A0007A160 /* GradientViewController.h */,
-				5D1DDB0F1D1B039A0007A160 /* GradientViewController.m */,
-			);
-			name = Gradient;
-			sourceTree = "<group>";
-		};
-		5D1DDB221D1B04040007A160 /* Tinting */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB141D1B03D00007A160 /* TintingViewController.h */,
-				5D1DDB151D1B03D00007A160 /* TintingViewController.m */,
-			);
-			name = Tinting;
-			sourceTree = "<group>";
-		};
-		5D1DDB231D1B040E0007A160 /* Hexadecimal */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB171D1B03DC0007A160 /* HexadecimalViewController.h */,
-				5D1DDB181D1B03DC0007A160 /* HexadecimalViewController.m */,
-			);
-			name = Hexadecimal;
-			sourceTree = "<group>";
-		};
-		5D1DDB241D1B041A0007A160 /* Installation */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB1A1D1B03E30007A160 /* InstallationViewController.h */,
-				5D1DDB1B1D1B03E30007A160 /* InstallationViewController.m */,
-			);
-			name = Installation;
-			sourceTree = "<group>";
-		};
-		5D1DDB251D1B04260007A160 /* Liscense */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB1D1D1B03EA0007A160 /* LiscenseViewController.h */,
-				5D1DDB1E1D1B03EA0007A160 /* LiscenseViewController.m */,
-			);
-			name = Liscense;
-			sourceTree = "<group>";
-		};
 		5D54E2AE1D19B0570006D14F /* Detail Views */ = {
-			isa = PBXGroup;
-			children = (
-				5D54E2B61D1A010F0006D14F /* Motion */,
-				5D54E2B71D1A01180006D14F /* TextField */,
-				5D1DDB201D1B03F30007A160 /* Validation */,
-				5D1DDB211D1B03FB0007A160 /* Gradient */,
-				5D1DDB221D1B04040007A160 /* Tinting */,
-				5D1DDB231D1B040E0007A160 /* Hexadecimal */,
-				5D1DDB241D1B041A0007A160 /* Installation */,
-				5D1DDB251D1B04260007A160 /* Liscense */,
-				5D0383631D2EC3A800425BE3 /* Circle */,
-			);
-			name = "Detail Views";
-			sourceTree = "<group>";
-		};
-		5D54E2B51D1A00F40006D14F /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				5D54E2AB1D19ABCF0006D14F /* TableViewController.h */,
-				5D54E2AC1D19ABCF0006D14F /* TableViewController.m */,
-			);
-			name = Table;
-			sourceTree = "<group>";
-		};
-		5D54E2B61D1A010F0006D14F /* Motion */ = {
-			isa = PBXGroup;
-			children = (
-				5D1DDB261D1B0B2C0007A160 /* MotionViewController.h */,
-				5D1DDB271D1B0B2C0007A160 /* MotionViewController.m */,
-			);
-			name = Motion;
-			sourceTree = "<group>";
-		};
-		5D54E2B71D1A01180006D14F /* TextField */ = {
 			isa = PBXGroup;
 			children = (
 				5D54E2AF1D19E2F90006D14F /* TextFieldViewController.h */,
 				5D54E2B01D19E2F90006D14F /* TextFieldViewController.m */,
+				5D1DDB0B1D1B03920007A160 /* ValidationViewController.h */,
+				5D1DDB0C1D1B03920007A160 /* ValidationViewController.m */,
+				5D1DDB0E1D1B039A0007A160 /* GradientViewController.h */,
+				5D1DDB0F1D1B039A0007A160 /* GradientViewController.m */,
+				5D1DDB261D1B0B2C0007A160 /* MotionViewController.h */,
+				5D1DDB271D1B0B2C0007A160 /* MotionViewController.m */,
+				5D1DDB141D1B03D00007A160 /* TintingViewController.h */,
+				5D1DDB151D1B03D00007A160 /* TintingViewController.m */,
+				5D1DDB171D1B03DC0007A160 /* HexadecimalViewController.h */,
+				5D1DDB181D1B03DC0007A160 /* HexadecimalViewController.m */,
+				5D0383601D2EBB4700425BE3 /* CircleViewController.h */,
+				5D0383611D2EBB4700425BE3 /* CircleViewController.m */,
+				5D1DDB1A1D1B03E30007A160 /* InstallationViewController.h */,
+				5D1DDB1B1D1B03E30007A160 /* InstallationViewController.m */,
+				5D1DDB1D1D1B03EA0007A160 /* LiscenseViewController.h */,
+				5D1DDB1E1D1B03EA0007A160 /* LiscenseViewController.m */,
 			);
-			name = TextField;
+			name = "Detail Views";
 			sourceTree = "<group>";
 		};
 		5DCB87601D1C7D1A00189E43 /* Originate Fonts */ = {
@@ -318,7 +237,8 @@
 				5D1DDB091D1AF3B00007A160 /* CodeViewController.m */,
 				5D54E2A81D19AAE70006D14F /* HomeViewController.h */,
 				5D54E2A91D19AAE70006D14F /* HomeViewController.m */,
-				5D54E2B51D1A00F40006D14F /* Table */,
+				5D54E2AB1D19ABCF0006D14F /* TableViewController.h */,
+				5D54E2AC1D19ABCF0006D14F /* TableViewController.m */,
 				5D54E2AE1D19B0570006D14F /* Detail Views */,
 				F90ED7D11BB1BF0C008A7295 /* Resources */,
 				F96B54231BB18B9D004B884D /* Supporting Files */,

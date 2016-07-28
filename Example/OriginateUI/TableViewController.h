@@ -7,7 +7,6 @@
 //
 
 @import UIKit;
-@import OriginateUI;
 
 @interface TableViewController : UIViewController
 

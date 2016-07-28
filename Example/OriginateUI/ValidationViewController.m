@@ -22,11 +22,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)loadView
+{
+    [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Validating TextFields", nil);
     CGFloat screenHeight = CGRectGetHeight(self.view.frame);
     CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-
+    
     UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     codeButton.frame = CGRectMake(screenWidth-100.0,screenHeight-48.0, 110.0, 40.0);
     [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
