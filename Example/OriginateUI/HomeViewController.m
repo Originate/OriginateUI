@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UILabel *introLabel;
 @property (nonatomic, strong) UIImageView *titleImage;
+@property (nonatomic, strong) UIButton *featuresButton;
 
 @end
 
@@ -22,50 +23,137 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Originate UI", nil);
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)loadView
 {
     [super loadView];
-    self.title = NSLocalizedString(@"Originate UI", nil);
-    CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-    CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.titleImage];
     [self.view addSubview:self.introLabel];
+    [self.view addSubview:self.featuresButton];
     
-    UIButton *featuresButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    featuresButton.frame = CGRectMake((screenWidth*0.5 - 70.0),(screenHeight*0.625), 140.0, 50.0);
-    [featuresButton setTitle:NSLocalizedString(@"Features", nil) forState:UIControlStateNormal];
-    featuresButton.titleLabel.font = [UIFont systemFontOfSize:26];
-    [featuresButton addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:featuresButton];
+    [self.titleImage setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImage
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:100]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImage
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImage
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.8
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImage
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:(0.8 * (1.0/3.56))
+                                                           constant:0]];
+    
+    [self.introLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.introLabel
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.titleImage
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:50]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.introLabel
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:0.2
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.introLabel
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.introLabel
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.95
+                                                           constant:0]];
+    
+    [self.featuresButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.featuresButton
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.introLabel
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:20]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.featuresButton
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:0.0
+                                                           constant:50]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.featuresButton
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.featuresButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.6
+                                                           constant:0]];
+}
+
+- (UIButton *) featuresButton
+{
+    if (!_featuresButton) {
+        _featuresButton = [[UIButton alloc] init];
+        _featuresButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_featuresButton setTitle:NSLocalizedString(@"Features", nil) forState:UIControlStateNormal];
+        _featuresButton.titleLabel.font = [UIFont systemFontOfSize:26];
+        [_featuresButton addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _featuresButton;
 }
 
 - (UIImageView *) titleImage
 {
-    if (!_titleImage){
-        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.titleImage =[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth*0.15,screenHeight*0.15,
-            screenWidth*0.7,screenWidth*0.2)];
-        UIImage *logo = [UIImage imageNamed:@"Originate.png"];
-        self.titleImage.image = logo;
+    if (!_titleImage) {
+        _titleImage = [[UIImageView alloc] init];
+        _titleImage.image = [UIImage imageNamed:@"Originate.png"];
     }
     return _titleImage;
 }
 
 - (UILabel *)introLabel
 {
-    if (!_introLabel){
-        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.025,
-            screenHeight*0.4, screenWidth*0.95, screenHeight*0.3)];
-        self.introLabel.text = NSLocalizedString(@"\tA collection of classes "
+    if (!_introLabel) {
+        _introLabel = [[UILabel alloc] init];
+        _introLabel.text = NSLocalizedString(@"\tA collection of classes "
             "and categories making life easier when writing user interface related code.", nil);
-        self.introLabel.numberOfLines = 0;
-        self.introLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 23];
+        _introLabel.numberOfLines = 0;
+        _introLabel.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 23];
     }
     return _introLabel;
 }

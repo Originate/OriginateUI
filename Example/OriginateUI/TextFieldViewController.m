@@ -15,6 +15,8 @@
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) OriginateValidatedTextField *textField;
 @property (nonatomic, assign) BOOL currentlyValid;
+@property (nonatomic, strong) UIButton* codeButton;
+@property (nonatomic, strong) UIButton* insetButton;
 
 @end
 
@@ -23,50 +25,153 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = NSLocalizedString(@"Text Fields", nil);
 }
 
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = NSLocalizedString(@"Text Fields", nil);
-    CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-    CGFloat screenWidth = CGRectGetWidth(self.view.frame);
     [self.view addSubview:self.textField];
     [self.view addSubview:self.label];
+    [self.view addSubview:self.codeButton];
+    [self.view addSubview:self.insetButton];
     
-    UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    codeButton.frame = CGRectMake((screenWidth-110.0),(screenHeight-48.0), 110.0, 40.0);
-    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
-    [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:codeButton];
+    [self.textField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.label
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:40]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0
+                                                           constant:10]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.67
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:0.2
+                                                           constant:0]];
     
-    UIButton *insetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    insetButton.frame = CGRectMake((screenWidth*0.7),(screenHeight*0.575), 110.0, 40.0);
-    [insetButton setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];
-    insetButton.titleLabel.font = [UIFont systemFontOfSize:22];
-    [insetButton addTarget:self action:@selector(insetButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:insetButton];
+    [self.label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:80]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.95
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.5
+                                                           constant:0]];
+    
+    [self.codeButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:-5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:0.0
+                                                           constant:100]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:0.0
+                                                           constant:40]];
+    
+    [self.insetButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.insetButton
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.textField
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.insetButton
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.textField
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:20]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.insetButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.15
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.insetButton
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:0.1
+                                                           constant:0]];
 }
 
 - (OriginateValidatedTextField *)textField
 {
     if (!_textField){
-        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.textField = [[OriginateValidatedTextField alloc] init];
-        self.textField.frame = CGRectMake((screenWidth*0.05), (screenHeight*0.525), (screenWidth*0.7),
-                                          (screenHeight*0.15));
-        self.textField.delegate = self;
-        self.textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
-        [self.textField setReturnKeyType:UIReturnKeyDone];
-        self.textField.validationMode = OriginateTextFieldValidationModeLive;
-        self.textField.validationBlock = ^BOOL(NSString *text) {
+        _textField = [[OriginateValidatedTextField alloc] init];
+        _textField.delegate = self;
+        _textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
+        [_textField setReturnKeyType:UIReturnKeyDone];
+        _textField.validationMode = OriginateTextFieldValidationModeLive;
+        _textField.validationBlock = ^BOOL(NSString *text) {
             NSArray *strings = [text componentsSeparatedByString:@","];
             return (([strings count] == 4) && ([strings[0] intValue]) && ([strings[1] intValue]) &&
                     ([strings[2] intValue]) && ([strings[3] intValue])) ;
         };
-        self.textField.validationChangedBlock = ^(BOOL isValid, OriginateValidatedTextField *textField) {
+        _textField.validationChangedBlock = ^(BOOL isValid, OriginateValidatedTextField *textField) {
             if (isValid) {
                 _currentlyValid = YES;
                 textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
@@ -76,9 +181,9 @@
                 textField.backgroundColor = [UIColor hex:0xFF3B30 alpha:0.5];
             }
         };
-        self.textField.borderStyle = UITextBorderStyleRoundedRect;
-        self.textField.textEdgeInsets = UIEdgeInsetsMake(10.0, 15.0, 5.0, 5.0);
-        self.textField.text = @"10.0, 15.0, 5.0, 5.0";
+        _textField.borderStyle = UITextBorderStyleRoundedRect;
+        _textField.textEdgeInsets = UIEdgeInsetsMake(10.0, 15.0, 5.0, 5.0);
+        _textField.text = @"10.0, 15.0, 5.0, 5.0";
     }
     return _textField;
 }
@@ -86,17 +191,37 @@
 - (UILabel *) label
 {
     if (!_label){
-        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.1),
-            (screenWidth*0.9), (screenHeight*0.5))];
-        self.label.text = NSLocalizedString(@"UITextField has no convenient way to specify insets for the text"
+        _label = [[UILabel alloc] init];
+        _label.text = NSLocalizedString(@"UITextField has no convenient way to specify insets for the text"
             "rendering. OriginateTextField solves the problem by exposing the following interface.\n\n"
             "Observe and set the insets of the text below.\nPlease enter four values", nil);
-        self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
-        self.label.numberOfLines = 0;
+        _label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 18];
+        _label.numberOfLines = 0;
     }
     return _label;
+}
+
+- (UIButton *) codeButton
+{
+    if (!_codeButton) {
+        _codeButton = [[UIButton alloc] init];
+        _codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
+        [_codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _codeButton;
+}
+
+- (UIButton *) insetButton
+{
+    if (!_insetButton) {
+        _insetButton = [[UIButton alloc] init];
+        _insetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_insetButton setTitle:NSLocalizedString(@"Go", nil) forState:UIControlStateNormal];
+        _insetButton.titleLabel.font = [UIFont systemFontOfSize:22];
+        [_insetButton addTarget:self action:@selector(insetButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _insetButton;
 }
 
 - (void)insetButtonPressed

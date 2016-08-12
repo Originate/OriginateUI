@@ -16,6 +16,7 @@
 #import "LiscenseViewController.h"
 #import "MotionViewController.h"
 #import "CircleViewController.h"
+#import "ToggleButtonViewController.h"
 @import OriginateUI;
 
 @interface TableViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -31,17 +32,52 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Features", nil);
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.table setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.table
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.table
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.table
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.table
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:1.0
+                                                           constant:0]];
 }
 
 - (void)loadView
 {
     [super loadView];
-    self.title = NSLocalizedString(@"Features", nil);
-    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.table];
+
 }
 
-typedef enum{
+typedef enum {
+    NavBarHeight = 64
+} NavBarSize;
+
+typedef enum {
     TextFields = 0,
     Validation = 1,
     Gradient = 2,
@@ -49,25 +85,26 @@ typedef enum{
     Tinting = 4,
     Hexadecimal = 5,
     Circle = 6,
-    Installation = 7,
-    Liscense = 8
+    Toggle = 7,
+    Installation = 8,
+    Liscense = 9
 } IndexRow;
 
 - (UITableView *)table
 {
-    if (!_table){
-        self.table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        self.table.backgroundColor = [UIColor whiteColor];
-        self.table.delegate = self;
-        self.table.dataSource = self;
+    if (!_table) {
+        _table = [[UITableView alloc] init];
+        _table.backgroundColor = [UIColor whiteColor];
+        _table.delegate = self;
+        _table.dataSource = self;
     }
     return _table;
 }
 
 - (NSArray *)details
 {
-    if (!_details){
-        self.details = @[
+    if (!_details) {
+        _details = @[
                          NSLocalizedString(@"Specifiy insets for text rendering or other elements", nil),
                          NSLocalizedString(@"For text fields that would benefit from validation.", nil),
                          NSLocalizedString(@"For text fields that would benefit from validation.", nil),
@@ -75,6 +112,7 @@ typedef enum{
                          NSLocalizedString(@"Two methods on UIImage to make tinting easier.", nil),
                          NSLocalizedString(@"Allows use of hexadecimal colors with UIColor.", nil),
                          NSLocalizedString(@"Easily create circular labeled images.", nil),
+                         NSLocalizedString(@"Customizable loading toggle button.", nil),
                          NSLocalizedString(@"Install OriginateUI with just a few lines of code.", nil),
                          NSLocalizedString(@"OriginateUI is available under the MIT license.", nil),];
     }
@@ -84,11 +122,11 @@ typedef enum{
 - (NSArray *)labels
 {
     if (!_labels) {
-        self.labels = @[ NSLocalizedString(@"Text Fields",nil), NSLocalizedString(@"Validating Text Fields",nil),
+        _labels = @[ NSLocalizedString(@"Text Fields",nil), NSLocalizedString(@"Validating Text Fields",nil),
                          NSLocalizedString(@"Gradient Views",nil), NSLocalizedString(@"Motion Interpolation",nil),
                          NSLocalizedString(@"Image Tinting",nil), NSLocalizedString(@"Hexadecimal Colors",nil),
-                         NSLocalizedString(@"Circle Images",nil), NSLocalizedString(@"Installation",nil),
-                         NSLocalizedString(@"Liscense",nil),];
+                         NSLocalizedString(@"Circle Images",nil), NSLocalizedString(@"Loading Toggle Button",nil),
+                         NSLocalizedString(@"Installation",nil), NSLocalizedString(@"Liscense",nil),];
     }
     return _labels;
 }
@@ -111,7 +149,7 @@ typedef enum{
 
 - (CGFloat)tableView: (UITableView*)tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
 {
-    return (self.view.frame.size.height - 64.0)/9.0;
+    return (self.view.frame.size.height - NavBarHeight)/[self.labels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,6 +210,12 @@ typedef enum{
         {
             CircleViewController *circleViewController =  [[CircleViewController alloc] init];
             [self.navigationController pushViewController:circleViewController animated:YES];
+        }
+            break;
+        case Toggle:
+        {
+            ToggleButtonViewController *toggleButtonViewController =  [[ToggleButtonViewController alloc] init];
+            [self.navigationController pushViewController:toggleButtonViewController animated:YES];
         }
             break;
         case Installation:

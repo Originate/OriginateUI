@@ -1,86 +1,75 @@
 //
-//  CodeViewController.m
+//  ToggleButtonViewController.m
 //  OriginateUI
 //
-//  Created by Seth Rainha on 6/22/16.
+//  Created by Seth Rainha on 16/8/12.
 //  Copyright © 2016 originate.com. All rights reserved.
 //
 
-#import "CodeViewController.h"
-@import OriginateUI;
+#import "ToggleButtonViewController.h"
 
-@interface CodeViewController () <UITextViewDelegate>
+@interface ToggleButtonViewController ()
 
-@property (nonatomic, strong) NSString *codeText;
-@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) UILabel *label;
 
 @end
 
-@implementation CodeViewController
+@implementation ToggleButtonViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Loading Toggle Button", nil);
     self.view.backgroundColor = [UIColor whiteColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
-- (void)loadView
+-(void)loadView
 {
     [super loadView];
-    [self.view addSubview:self.textView];
+    [self.view addSubview:self.label];
     
-    [self.textView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textView
+    [self.label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeTop
                                                          multiplier:1.0
-                                                           constant:100]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textView
+                                                           constant:80]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.0
                                                            constant:0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
                                                           attribute:NSLayoutAttributeWidth
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeWidth
-                                                         multiplier:1.0
-                                                           constant:-10]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textView
+                                                         multiplier:0.5
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
                                                           attribute:NSLayoutAttributeHeight
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
-                                                          attribute:NSLayoutAttributeHeight
-                                                         multiplier:0.4
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.5
                                                            constant:0]];
 }
 
-- (UITextView *)textView
+- (UILabel *)label
 {
-    if (!_textView) {
-        _textView = [[UITextView alloc] init];
-        _textView.delegate = self;
-        [_textView setBackgroundColor: [UIColor hex:0xfaebd7]];
-        _textView.text = self.codeText;
-        _textView.editable = NO;
+    if (!_label) {
+        _label = [[UILabel alloc] init];
+        _label.text = NSLocalizedString(@"Coming soon.", nil);
+        _label.numberOfLines = 0;
+        _label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 23];
     }
-    return _textView;
+    return _label;
 }
 
 
-- (instancetype)initWithText:(NSString *)text
-{
-    self = [super init];
-    if (self) {
-        self.codeText = text;
-    }
-    return self;
-}
 
 @end

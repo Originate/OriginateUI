@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) OriginateValidatedTextField *textField;
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIButton* codeButton;
 
 @end
 
@@ -22,41 +23,122 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = NSLocalizedString(@"Validating TextFields", nil);
 }
 
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = NSLocalizedString(@"Validating TextFields", nil);
-    CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-    CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-    
-    UIButton *codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    codeButton.frame = CGRectMake(screenWidth-100.0,screenHeight-48.0, 110.0, 40.0);
-    [codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
-    [codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:codeButton];
+
+    [self.view addSubview:self.codeButton];
     [self.view addSubview:self.label];
     [self.view addSubview:self.textField];
+    
+    [self.codeButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:-5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:0.0
+                                                           constant:100]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.codeButton
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:0.0
+                                                           constant:40]];
+    
+    [self.label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.textField
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:50]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:0.6
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.label
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.95
+                                                           constant:0]];
+
+    [self.textField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:100]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeWidth
+                                                         multiplier:0.75
+                                                           constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:0.0
+                                                           constant:30]];
 }
 
 - (OriginateValidatedTextField *)textField
 {
     if (!_textField){
-        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.textField = [[OriginateValidatedTextField alloc] init];
-        self.textField.frame = CGRectMake((screenWidth*.125), (screenHeight*.15), (screenWidth*.75), 30);
-        [self.textField setReturnKeyType:UIReturnKeyDone];
-        self.textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
-        self.textField.borderStyle = UITextBorderStyleRoundedRect;
-        self.textField.text = @"This is valid.";
-        self.textField.validationMode = OriginateTextFieldValidationModeLive;
-        self.textField.validationBlock = ^BOOL(NSString *text) {
+        _textField = [[OriginateValidatedTextField alloc] init];
+        [_textField setReturnKeyType:UIReturnKeyDone];
+        _textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
+        _textField.borderStyle = UITextBorderStyleRoundedRect;
+        _textField.text = @"This is valid.";
+        _textField.validationMode = OriginateTextFieldValidationModeLive;
+        _textField.validationBlock = ^BOOL(NSString *text) {
             return ([text length] > 5);
         };
-        self.textField.validationChangedBlock = ^(BOOL isValid, OriginateValidatedTextField *textField) {
+        _textField.validationChangedBlock = ^(BOOL isValid, OriginateValidatedTextField *textField) {
             if (isValid) {
                 textField.backgroundColor = [UIColor hex:0x007AFF alpha:0.5];
             }
@@ -72,17 +154,25 @@
 - (UILabel *) label
 {
     if (!_label){
-        CGFloat screenHeight = CGRectGetHeight(self.view.frame);
-        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth*0.05, (screenHeight*0.35),
-                                                               (screenWidth*0.9), (screenHeight*0.3))];
-        self.label.text = NSLocalizedString(@"When implementing registration forms, login masks or other types of"
-        "forms that would benefit from any validation, use Originate Validated Text Field. \n\n Currently"
+        _label = [[UILabel alloc] init];
+        _label.text = NSLocalizedString(@"When implementing registration forms, login masks or other types of"
+        "forms that would benefit from any validation, use Originate Validated Text Field. \n\n Currently "
                                             "the validationMode is live, and the Block is length > 5. ", nil);
-        self.label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
-        self.label.numberOfLines = 0;
+        _label.font = [UIFont fontWithName:@"MillerDisplay-Roman" size: 20];
+        _label.numberOfLines = 0;
     }
     return _label;
+}
+
+- (UIButton *) codeButton
+{
+    if (!_codeButton) {
+        _codeButton = [[UIButton alloc] init];
+        _codeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_codeButton setTitle:NSLocalizedString(@"Code", nil) forState:UIControlStateNormal];
+        [_codeButton addTarget:self action:@selector(codeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _codeButton;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

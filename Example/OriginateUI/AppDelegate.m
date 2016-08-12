@@ -21,10 +21,10 @@
 
 - (UINavigationController *)navigationController
 {
-    if (!_navigationController){
+    if (!_navigationController) {
         HomeViewController *homeViewController = [[HomeViewController alloc] init];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-        self.window.rootViewController = self.navigationController;
+        _navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+        self.window.rootViewController = _navigationController;
         
         [self.navigationController.navigationBar setTitleTextAttributes:
          @{NSForegroundColorAttributeName:[UIColor blackColor],

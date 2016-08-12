@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D0383621D2EBB4700425BE3 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383611D2EBB4700425BE3 /* CircleViewController.m */; };
+		5D1CCBDD1D5E4B6E002BBA8A /* ToggleButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CCBDC1D5E4B6E002BBA8A /* ToggleButtonViewController.m */; };
 		5D1DDB0A1D1AF3B00007A160 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB091D1AF3B00007A160 /* CodeViewController.m */; };
 		5D1DDB0D1D1B03920007A160 /* ValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB0C1D1B03920007A160 /* ValidationViewController.m */; };
 		5D1DDB101D1B039A0007A160 /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DDB0F1D1B039A0007A160 /* GradientViewController.m */; };
@@ -49,6 +50,8 @@
 		5798EC5E70FE04F0BC6C4775 /* Pods-OriginateUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateUI-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateUI-Example/Pods-OriginateUI-Example.release.xcconfig"; sourceTree = "<group>"; };
 		5D0383601D2EBB4700425BE3 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
 		5D0383611D2EBB4700425BE3 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
+		5D1CCBDB1D5E4B6E002BBA8A /* ToggleButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleButtonViewController.h; sourceTree = "<group>"; };
+		5D1CCBDC1D5E4B6E002BBA8A /* ToggleButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleButtonViewController.m; sourceTree = "<group>"; };
 		5D1DDB081D1AF3B00007A160 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
 		5D1DDB091D1AF3B00007A160 /* CodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
 		5D1DDB0B1D1B03920007A160 /* ValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidationViewController.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				5D1DDB181D1B03DC0007A160 /* HexadecimalViewController.m */,
 				5D0383601D2EBB4700425BE3 /* CircleViewController.h */,
 				5D0383611D2EBB4700425BE3 /* CircleViewController.m */,
+				5D1CCBDB1D5E4B6E002BBA8A /* ToggleButtonViewController.h */,
+				5D1CCBDC1D5E4B6E002BBA8A /* ToggleButtonViewController.m */,
 				5D1DDB1A1D1B03E30007A160 /* InstallationViewController.h */,
 				5D1DDB1B1D1B03E30007A160 /* InstallationViewController.m */,
 				5D1DDB1D1D1B03EA0007A160 /* LiscenseViewController.h */,
@@ -478,6 +483,7 @@
 				F96B54261BB18B9D004B884D /* main.m in Sources */,
 				5D1DDB281D1B0B2C0007A160 /* MotionViewController.m in Sources */,
 				5D54E2AD1D19ABCF0006D14F /* TableViewController.m in Sources */,
+				5D1CCBDD1D5E4B6E002BBA8A /* ToggleButtonViewController.m in Sources */,
 				5D1DDB1F1D1B03EA0007A160 /* LiscenseViewController.m in Sources */,
 				5D54E2AA1D19AAE70006D14F /* HomeViewController.m in Sources */,
 				5D1DDB0A1D1AF3B00007A160 /* CodeViewController.m in Sources */,
