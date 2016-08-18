@@ -16,6 +16,7 @@
 #import "UIImage+OriginateCircularImage.h"
 #import "UIImage+OriginateCorners.h"
 #import "UIImage+OriginateEffects.h"
+#import "UIImage+OriginateGradient.h"
 #import "UIImage+OriginateResize.h"
 #import "UIImage+OriginateTinting.h"
 #import "UITableViewcell+OriginateSeparators.h"
