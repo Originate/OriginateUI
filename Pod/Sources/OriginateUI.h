@@ -19,7 +19,7 @@
 #import "UIImage+OriginateGradient.h"
 #import "UIImage+OriginateResize.h"
 #import "UIImage+OriginateTinting.h"
-#import "UITableViewcell+OriginateSeparators.h"
+#import "UITableViewCell+OriginateSeparators.h"
 #import "UIView+OriginateMotionInterpolation.h"
 #import "UIViewController+OriginateTabBarScroller.h"
 
